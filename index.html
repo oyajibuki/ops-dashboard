@@ -193,6 +193,18 @@
     .st:last-child { border-bottom: none; }
     .st-name { flex: 1; line-height: 1.45; }
 
+    /* Blocker banner */
+    .blocker-banner { background: rgba(255,45,85,.12); border: 1px solid rgba(255,45,85,.5);
+      border-radius: 14px; padding: 16px 20px; display: flex; align-items: flex-start; gap: 14px; }
+    .blocker-icon { font-size: 1.6rem; flex-shrink: 0; line-height: 1; }
+    .blocker-body { flex: 1; }
+    .blocker-title { font-size: .95rem; font-weight: 700; color: var(--danger); margin-bottom: 4px; }
+    .blocker-note { font-size: .8rem; color: rgba(255,100,120,.8); line-height: 1.6; }
+    .blocker-deadline { font-size: .72rem; color: var(--danger); margin-top: 6px; font-weight: 600; }
+    .blocker-days { font-size: 1.4rem; font-weight: 700; color: var(--danger); line-height: 1;
+      background: rgba(255,45,85,.15); border-radius: 8px; padding: 6px 12px; text-align: center; flex-shrink: 0; }
+    .blocker-days span { font-size: .65rem; font-weight: 400; color: rgba(255,100,120,.8); display: block; margin-top: 2px; }
+
     @media (max-width: 640px) {
       h1 { font-size: 1.35rem; }
       .card { padding: 16px 14px; }
@@ -212,10 +224,16 @@ const D = {
   subtitle:"全プロジェクトの現状と戦略を一元管理",
   updated: "2026-03-07",
 
+  // ── ブロッカー（最優先・終わるまで他作業NG）──
+  blockers: [
+    { label:"確定申告", deadline:"2026-03-14", note:"3/17が法的締切（3/15日曜繰越）。今週中に完了させる。終わるまでOshiPay2等の作業はしない。" },
+  ],
+
   // ── カレンダー マイルストーン ──
   // Claudeに「GCalから同期して」と言えば自動更新
   milestones: [
-    { date:"2026-03-14", label:"OshiPay2 A-1 ダッシュボード復元完了", proj:"oshipay2",   pr:"high" },
+    { date:"2026-03-14", label:"🚨 確定申告 完了目標（法的締切3/17）",  proj:"other",    pr:"high" },
+    { date:"2026-03-21", label:"OshiPay2 A-1 ダッシュボード復元完了", proj:"oshipay2",   pr:"high" },
     { date:"2026-03-21", label:"OshiPay2 A-2 my_history ページ完了",  proj:"oshipay2",   pr:"high" },
     { date:"2026-03-28", label:"OshiPay2 本番テスト（Stripe Live）",  proj:"oshipay2",   pr:"high" },
     { date:"2026-04-05", label:"OshiPay2 リリース・SNS 告知",         proj:"oshipay2",   pr:"mid"  },
@@ -479,6 +497,25 @@ function moveCal(dir) {
 // ═══════════════════════════════════════════
 const app = document.getElementById("app")
 let h = ""
+
+/* Blocker banner */
+if (D.blockers && D.blockers.length) {
+  D.blockers.forEach(b => {
+    const dl   = new Date(b.deadline)
+    const now  = new Date(); now.setHours(0,0,0,0)
+    const diff = Math.ceil((dl - now) / 86400000)
+    const daysStr = diff > 0 ? `${diff}` : "期限超"
+    h += `<div class="blocker-banner">
+      <div class="blocker-icon">🚨</div>
+      <div class="blocker-body">
+        <div class="blocker-title">BLOCKER: ${b.label}</div>
+        <div class="blocker-note">${b.note}</div>
+        <div class="blocker-deadline">目標: ${b.deadline} まで</div>
+      </div>
+      <div class="blocker-days">${daysStr}<span>日後</span></div>
+    </div>`
+  })
+}
 
 /* Header */
 h += `<div class="hd">
