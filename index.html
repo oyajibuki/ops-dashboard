@@ -14,7 +14,6 @@
       --accent2:  #4facfe;
       --danger:   #ff2d55;
       --warning:  #ffcc00;
-      --bg:       #0e0f1a;
       --card:     rgba(255,255,255,0.06);
       --card-ft:  rgba(79,172,254,0.07);
       --border:   rgba(255,255,255,0.12);
@@ -25,86 +24,77 @@
     *, *::before, *::after { box-sizing: border-box; }
 
     body {
-      margin: 0;
-      padding: 24px 16px 48px;
+      margin: 0; padding: 24px 16px 60px;
       font-family: 'Inter', 'Noto Sans JP', sans-serif;
       background: linear-gradient(135deg, #0a0c18, #14172a);
-      color: var(--text);
-      min-height: 100vh;
+      color: var(--text); min-height: 100vh;
     }
     .container { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
 
-    /* ── Header ── */
+    /* Header */
     .hd { text-align: center; padding: 4px 0 8px; }
-    h1 {
-      margin: 0; font-size: 1.85rem;
+    h1 { margin: 0; font-size: 1.85rem;
       background: linear-gradient(90deg, var(--accent2), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hd-sub { color: var(--sub); font-size: 0.84rem; margin-top: 5px; }
-    .hd-upd { color: rgba(160,160,176,.5); font-size: 0.72rem; margin-top: 3px; }
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hd-sub { color: var(--sub); font-size: .84rem; margin-top: 5px; }
+    .hd-upd { color: rgba(160,160,176,.45); font-size: .72rem; margin-top: 3px; }
 
-    /* ── Cards ── */
+    /* Cards */
     .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
     .card.ft { background: var(--card-ft); border-color: var(--border-ft); box-shadow: 0 0 40px rgba(79,172,254,.08); }
     h2 { margin: 0 0 14px; font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-    h3 { margin: 16px 0 8px; font-size: 0.88rem; color: var(--accent); letter-spacing: .5px; text-transform: uppercase; }
+    h3 { margin: 16px 0 8px; font-size: .82rem; color: var(--accent); letter-spacing: .6px; text-transform: uppercase; }
 
-    /* ── Badges ── */
+    /* Badges / Priority */
     .badge { font-size: .68rem; padding: 3px 9px; border-radius: 20px; font-weight: 700; white-space: nowrap; }
-    .run  { background: rgba(76,217,100,.18);  color: var(--primary); }
-    .plan { background: rgba(255,204,0,.18);    color: var(--warning); }
-    .pend { background: rgba(255,45,85,.18);    color: var(--danger); }
-
-    /* ── Priority ── */
+    .run  { background: rgba(76,217,100,.18); color: var(--primary); }
+    .plan { background: rgba(255,204,0,.18);  color: var(--warning); }
+    .pend { background: rgba(255,45,85,.18);  color: var(--danger);  }
     .ph { color: #ff6b7a; font-size: .7rem; font-weight: 700; white-space: nowrap; }
     .pm { color: #ffd166; font-size: .7rem; font-weight: 700; white-space: nowrap; }
     .pl { color: #4cd964; font-size: .7rem; font-weight: 700; white-space: nowrap; }
     .pf { color: var(--sub); font-size: .7rem; white-space: nowrap; }
 
-    /* ── Status dot ── */
+    /* Status dot */
     .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-    .dt  { background: rgba(255,255,255,.25); }
-    .dd  { background: #ffd166; }
-    .dn  { background: var(--primary); }
-    .df  { background: rgba(255,255,255,.12); }
+    .dt { background: rgba(255,255,255,.25); }
+    .dd { background: #ffd166; }
+    .dn { background: var(--primary); }
+    .df { background: rgba(255,255,255,.12); }
 
-    /* ── Progress bar ── */
+    /* Progress bar */
     .pb { height: 5px; background: rgba(255,255,255,.1); border-radius: 4px; overflow: hidden; margin-top: 7px; }
     .pf-bar { height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent)); border-radius: 4px; }
 
-    /* ── Links / Buttons ── */
+    /* Buttons */
     a.btn { text-decoration: none; color: #fff; background: rgba(255,255,255,.1);
-            padding: 5px 11px; border-radius: 7px; font-size: .75rem; border: 1px solid var(--border); white-space: nowrap; }
+      padding: 5px 11px; border-radius: 7px; font-size: .75rem; border: 1px solid var(--border); white-space: nowrap; }
     a.btn:hover { background: rgba(255,255,255,.18); }
     a.btn.ac { background: rgba(79,172,254,.14); border-color: rgba(79,172,254,.4); color: var(--accent); }
     .links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 
-    /* ── Meta row ── */
-    .meta { display: flex; align-items: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-    .meta-label { font-size: .75rem; color: var(--sub); }
-    .meta-bar { flex: 1; min-width: 100px; }
+    /* Meta row */
+    .meta { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+    .meta-label { font-size: .75rem; color: var(--sub); white-space: nowrap; }
+    .meta-bar { flex: 1; }
     .pct { font-size: .7rem; color: var(--sub); margin-top: 2px; }
 
-    /* ── Completed list ── */
+    /* Completed list */
     ul.done-list { list-style: none; padding: 0; margin: 0; }
-    ul.done-list li { font-size: .82rem; color: var(--sub); padding: 3px 0; display: flex; gap: 7px; align-items: flex-start; }
+    ul.done-list li { font-size: .82rem; color: var(--sub); padding: 3px 0; display: flex; gap: 7px; }
     ul.done-list li::before { content: "✓"; color: var(--primary); font-weight: 700; flex-shrink: 0; }
 
-    /* ── WBS Accordion ── */
+    /* WBS Accordion */
     .acc { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 8px; }
-    .acc-hd {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 9px 14px; cursor: pointer;
-      background: rgba(255,255,255,.03); user-select: none;
-    }
+    .acc-hd { display: flex; align-items: center; justify-content: space-between;
+      padding: 9px 14px; cursor: pointer; background: rgba(255,255,255,.03); user-select: none; }
     .acc-hd:hover { background: rgba(255,255,255,.06); }
     .acc-title { font-weight: 600; font-size: .85rem; display: flex; align-items: center; gap: 6px; }
     .arr { color: var(--sub); font-size: .7rem; transition: transform .18s; display: inline-block; }
     .arr.open { transform: rotate(90deg); }
     .acc-body { padding: 6px 14px 10px; display: none; }
 
-    /* ── WBS Task row ── */
+    /* WBS Task */
     .wt { display: flex; align-items: flex-start; gap: 9px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
     .wt:last-child { border-bottom: none; padding-bottom: 0; }
     .wt-body { flex: 1; min-width: 0; }
@@ -112,7 +102,7 @@
     .wt-id { font-size: .7rem; color: var(--sub); margin-right: 4px; }
     .wt-detail { font-size: .74rem; color: var(--sub); margin-top: 2px; line-height: 1.5; }
 
-    /* ── Projects overview ── */
+    /* Projects */
     .proj { padding: 11px 0; border-bottom: 1px solid var(--border); }
     .proj:last-child { border-bottom: none; }
     .proj-hd { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 3px; flex-wrap: wrap; }
@@ -123,29 +113,79 @@
     .sub-item { font-size: .76rem; color: rgba(160,160,176,.7); padding: 2px 0; }
     .sub-item::before { content: "↳ "; color: var(--accent2); }
 
-    /* ── Focus list ── */
+    /* ── Calendar ── */
+    .cal-wrap { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+    .cal-left { flex-shrink: 0; }
+    .cal-month-label { font-size: .8rem; font-weight: 700; color: var(--text); text-align: center; margin-bottom: 8px; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 34px); gap: 2px; }
+    .cal-dh { width: 34px; height: 22px; display: flex; align-items: center; justify-content: center;
+      font-size: .62rem; color: var(--sub); font-weight: 600; }
+    .cal-dh.sun { color: #ff6b7a; } .cal-dh.sat { color: var(--accent2); }
+    .cal-cell { width: 34px; height: 34px; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; border-radius: 7px; font-size: .78rem; color: var(--sub); position: relative; }
+    .cal-cell.today { background: rgba(79,172,254,.2); color: var(--accent); font-weight: 700; }
+    .cal-cell.has-ev { color: var(--text); }
+    .cal-cell.sunday { color: rgba(255,107,122,.6); }
+    .cal-cell.saturday { color: rgba(79,172,254,.6); }
+    .cal-cell.today.sunday, .cal-cell.today.saturday { color: var(--accent); }
+    .cal-dots { display: flex; gap: 2px; margin-top: 2px; }
+    .cal-dot { width: 4px; height: 4px; border-radius: 50%; }
+    .dot-oshipay { background: var(--accent); }
+    .dot-autocraft { background: var(--warning); }
+    .dot-blog { background: var(--primary); }
+    .dot-other { background: var(--sub); }
+
+    .cal-right { flex: 1; min-width: 220px; }
+    .cal-ms-title { font-size: .75rem; color: var(--accent); font-weight: 700; letter-spacing: .5px;
+      text-transform: uppercase; margin-bottom: 8px; }
+    .cal-ms { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,.05); }
+    .cal-ms:last-child { border-bottom: none; }
+    .cal-ms-date { font-size: .7rem; color: var(--accent2); white-space: nowrap; width: 52px; flex-shrink: 0; padding-top: 1px; }
+    .cal-ms-date.overdue { color: var(--danger); }
+    .cal-ms-body { flex: 1; }
+    .cal-ms-label { font-size: .8rem; color: var(--sub); line-height: 1.4; }
+    .cal-ms-proj { font-size: .65rem; margin-top: 2px; }
+    .cal-ms-proj.oshipay  { color: var(--accent); }
+    .cal-ms-proj.autocraft{ color: var(--warning); }
+    .cal-ms-proj.blog     { color: var(--primary); }
+    .cal-nav { display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 10px; }
+    .cal-nav-btn { background: rgba(255,255,255,.08); border: 1px solid var(--border); color: var(--sub);
+      border-radius: 6px; padding: 3px 10px; font-size: .75rem; cursor: pointer; }
+    .cal-nav-btn:hover { background: rgba(255,255,255,.14); color: var(--text); }
+    .cal-nav-label { font-size: .72rem; color: var(--sub); min-width: 70px; text-align: center; }
+
+    /* Notion 棲み分け */
+    .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 4px; }
+    .split-item { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+    .split-item.html-side { border-color: rgba(79,172,254,.35); background: rgba(79,172,254,.05); }
+    .split-item.notion-side { border-color: rgba(255,204,0,.25); background: rgba(255,204,0,.04); }
+    .split-head { font-size: .85rem; font-weight: 700; margin-bottom: 8px; }
+    .split-rule { font-size: .7rem; font-weight: 600; margin: 6px 0 4px; color: var(--sub); letter-spacing: .3px; }
+    .split-item ul { list-style: none; padding: 0; margin: 0; }
+    .split-item li { font-size: .78rem; color: var(--sub); padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+    .split-item li:last-child { border-bottom: none; }
+    .split-item.html-side li::before { content: "• "; color: var(--accent2); }
+    .split-item.notion-side li::before { content: "• "; color: var(--warning); }
+    .split-rule-box { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 14px; font-size: .78rem; color: var(--sub); text-align: center; margin-top: 4px; }
+    .split-rule-box strong { color: var(--text); }
+
+    /* Focus list */
     ul.fl { list-style: none; padding: 0; margin: 0; }
-    ul.fl li { display: flex; gap: 8px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: .86rem; color: var(--sub); }
+    ul.fl li { display: flex; gap: 8px; align-items: flex-start; padding: 7px 0;
+      border-bottom: 1px solid var(--border); font-size: .86rem; color: var(--sub); }
     ul.fl li:last-child { border-bottom: none; }
     ul.fl li::before { content: "▶"; color: var(--accent); font-size: .68rem; margin-top: 4px; flex-shrink: 0; }
 
-    /* ── KPI ── */
+    /* KPI */
     .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
     .kpi-item { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px; }
     .kpi-lbl { font-size: .73rem; color: var(--sub); margin-bottom: 4px; }
     .kpi-val { font-size: 1rem; font-weight: 700; color: var(--accent); }
     .kpi-tgt { font-size: .68rem; color: rgba(160,160,176,.55); margin-top: 3px; }
 
-    /* ── Notion 棲み分け ── */
-    .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .split-item { background: rgba(255,255,255,.03); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
-    .split-item h4 { margin: 0 0 8px; font-size: .85rem; }
-    .split-item ul { list-style: none; padding: 0; margin: 0; }
-    .split-item li { font-size: .78rem; color: var(--sub); padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
-    .split-item li:last-child { border-bottom: none; }
-    .split-item li::before { content: "• "; color: var(--accent2); }
-
-    /* ── Sub WBS ── */
+    /* Sub WBS */
     .sub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
     .sub-card { background: rgba(255,255,255,.03); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
     .sub-card h4 { margin: 0 0 10px; font-size: .9rem; }
@@ -153,217 +193,294 @@
     .st:last-child { border-bottom: none; }
     .st-name { flex: 1; line-height: 1.45; }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       h1 { font-size: 1.35rem; }
       .card { padding: 16px 14px; }
       .split-grid { grid-template-columns: 1fr; }
+      .cal-wrap { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 <div class="container" id="app"></div>
 <script>
-// ─────────────────────────────────────────
-//  DATA
-// ─────────────────────────────────────────
+// ═══════════════════════════════════════════
+//  DATA — ここだけ更新すれば全体に反映
+// ═══════════════════════════════════════════
 const D = {
-  title:    "副業・個人開発 統合ダッシュボード",
-  subtitle: "全プロジェクトの現状と戦略を一元管理",
-  updated:  "2026-03-07",
+  title:   "副業・個人開発 統合ダッシュボード",
+  subtitle:"全プロジェクトの現状と戦略を一元管理",
+  updated: "2026-03-07",
 
-  // ── メインプロジェクト ──
+  // ── カレンダー マイルストーン ──
+  // Claudeに「GCalから同期して」と言えば自動更新
+  milestones: [
+    { date:"2026-03-14", label:"OshiPay2 A-1 ダッシュボード復元完了", proj:"oshipay2",   pr:"high" },
+    { date:"2026-03-21", label:"OshiPay2 A-2 my_history ページ完了",  proj:"oshipay2",   pr:"high" },
+    { date:"2026-03-28", label:"OshiPay2 本番テスト（Stripe Live）",  proj:"oshipay2",   pr:"high" },
+    { date:"2026-04-05", label:"OshiPay2 リリース・SNS 告知",         proj:"oshipay2",   pr:"mid"  },
+    { date:"2026-04-12", label:"RubifyWord Pro BOOTH 出品",           proj:"autocraft",  pr:"mid"  },
+    { date:"2026-04-20", label:"Army/Rush Note 初回 3 本投稿",        proj:"other",      pr:"mid"  },
+    { date:"2026-04-30", label:"おやじブログ 90 日完走",              proj:"blog",       pr:"mid"  },
+  ],
+
+  // ── メインプロジェクト: OshiPay2 ──
   main: {
-    name: "OshiPay2",
-    desc: "推し活応援・投げ銭プラットフォーム。クリエイターがQRコードを表示するだけでサポーターから応援を受け取れる。Stripe決済 + Supabase (PostgreSQL) + Streamlit Cloud で構築・運用中。",
+    name:"OshiPay2",
+    desc:"推し活応援・投げ銭プラットフォーム。クリエイターがQRコードを表示するだけでサポーターから応援を受け取れる。Stripe決済 + Supabase (PostgreSQL) + Streamlit Cloud で構築・運用中。",
     progress: 60,
-    links: [
-      { label: "🚀 App",    url: "https://oshipay2jp.streamlit.app" },
-      { label: "GitHub",    url: "https://github.com/oyajibuki/OshiPay2" },
-      { label: "Supabase",  url: "https://zjygwjymbtskirycwptb.supabase.co" },
+    links:[
+      { label:"🚀 App",   url:"https://oshipay2jp.streamlit.app" },
+      { label:"GitHub",   url:"https://github.com/oyajibuki/OshiPay2" },
+      { label:"Supabase", url:"https://zjygwjymbtskirycwptb.supabase.co" },
     ],
-    done: [
+    done:[
       "Stripe決済フロー実装（Checkout → success → DB保存）",
       "返信機能（reply）— クリエイターが絵文字＋テキストで返信",
-      "テストページ追加（決済スキップ、全データ消去）",
+      "テストページ追加（決済スキップ・全データ消去）",
       "Supabase移行完了（JSON永続化 → PostgreSQL）",
       "GitHub / Streamlit Cloud デプロイ・動作確認済み",
     ],
-    wbs: [
-      {
-        id: "A", label: "A. 機能完成（必須）", prClass: "ph", prLabel: "🔴 高",
-        tasks: [
+    wbs:[
+      { id:"A", label:"A. 機能完成（必須）", prClass:"ph", prLabel:"🔴 高",
+        tasks:[
           { id:"A-1", name:"クリエイターダッシュボード復元機能",
             detail:"acct_id 手入力フォーム実装 / localStorage消失・デバイス変更に対応", pr:"high", st:"todo" },
           { id:"A-2", name:"サポーター応援履歴ページ（?page=my_history）",
             detail:"support_id を localStorage 保存 → Supabase から最新取得・返信有無を表示", pr:"high", st:"todo" },
           { id:"A-3", name:"BASE_URL 本番URL確定・更新",
             detail:"secrets.toml に APP_URL 追加 / oshipay2jp.streamlit.app を確認・反映", pr:"mid", st:"todo" },
-        ]
-      },
-      {
-        id: "B", label: "B. コレクタブルカード", prClass: "pm", prLabel: "🟡 中",
-        tasks: [
+        ]},
+      { id:"B", label:"B. コレクタブルカード", prClass:"pm", prLabel:"🟡 中",
+        tasks:[
           { id:"B-1", name:"Pillow カード画像生成ロジック",
-            detail:"クリエイター名・金額・日付・メッセージ・返信を PNG に合成", pr:"mid", st:"todo" },
+            detail:"クリエイター名・金額・日付・メッセージを PNG に合成", pr:"mid", st:"todo" },
           { id:"B-2", name:"ダウンロードボタン UI",
-            detail:"streamlit.download_button で PNG 配信（Streamlit Cloud でも動作）", pr:"mid", st:"todo" },
+            detail:"streamlit.download_button で PNG 配信", pr:"mid", st:"todo" },
           { id:"B-3", name:"Cloudflare R2 画像ストレージ",
             detail:"10GB 無料 / 画像の永続化（将来対応）", pr:"low", st:"future" },
           { id:"B-4", name:"カードマーケット機能（DB 内売買）",
-            detail:"is_listed / list_price / owner_id カラムは実装済み。UIは将来対応", pr:"low", st:"future" },
-        ]
-      },
-      {
-        id: "C", label: "C. インフラ・スケール", prClass: "pl", prLabel: "🟢 低",
-        tasks: [
-          { id:"C-1", name:"独自ドメイン取得",
-            detail:"ユーザー 100 人超え時が目安 / 約 ¥200/月", pr:"low", st:"future" },
-          { id:"C-2", name:"有料サーバー移行（VPS）",
-            detail:"3,000 ユーザー超え時 / さくら or DigitalOcean + Supabase Pro", pr:"low", st:"future" },
-        ]
-      },
-      {
-        id: "D", label: "D. リリース・告知", prClass: "pm", prLabel: "🟡 中",
-        tasks: [
+            detail:"is_listed / list_price / owner_id は実装済み。UI は将来対応", pr:"low", st:"future" },
+        ]},
+      { id:"C", label:"C. インフラ・スケール", prClass:"pl", prLabel:"🟢 低",
+        tasks:[
+          { id:"C-1", name:"独自ドメイン取得", detail:"ユーザー 100 人超え時 / 約 ¥200/月", pr:"low", st:"future" },
+          { id:"C-2", name:"有料サーバー移行（VPS）", detail:"3,000 ユーザー超え時 / さくら or DigitalOcean", pr:"low", st:"future" },
+        ]},
+      { id:"D", label:"D. リリース・告知", prClass:"pm", prLabel:"🟡 中",
+        tasks:[
           { id:"D-1", name:"本番動作テスト（Stripe 本番モード）",
             detail:"Live Key 設定・全フロー確認（決済〜応援証明〜返信）", pr:"high", st:"todo" },
           { id:"D-2", name:"note 記事 / SNS 告知",
             detail:"クリエイター向けにリリース記事を投稿・拡散", pr:"mid", st:"todo" },
-        ]
-      },
+        ]},
     ]
   },
 
   // ── プロジェクト全体像 ──
-  // ※ RubifyWord Pro は AutoCraft の傘下として sub-items に記載
-  projects: [
-    { name:"OshiPay2", status:"run", progress:60,
+  projects:[
+    { name:"OshiPay2",  status:"run", progress:60,
       link:"https://oshipay2jp.streamlit.app",
       desc:"推し活応援・投げ銭プラットフォーム（メインプロジェクト）。",
-      subs: [] },
+      subs:[] },
     { name:"AutoCraft", status:"run", progress:50,
       link:"https://oyajibuki.github.io/tools/",
       desc:"業務改善ツールの開発・販売ブランド。AI Subtitle を中心に展開。",
-      subs: ["AI Subtitle — 字幕生成ツール（販売中）", "RubifyWord Pro — NotebookLM誤読み解決ツール（開発中・BOOTH販売予定）", "FitSign — 電子サイン（公開済み）"] },
+      subs:["AI Subtitle — 字幕生成ツール（販売中）",
+            "RubifyWord Pro — NotebookLM誤読み解決ツール（開発中・BOOTH販売予定）",
+            "FitSign — 電子サイン（公開済み）"] },
     { name:"おやじの副業ブログ（90日）", status:"run", progress:78,
       link:"https://note.com/crisp_rue6588",
       desc:"副業のリアルな記録を毎日発信。90日完走後にPDF・マガジン化予定。",
-      subs: [] },
+      subs:[] },
     { name:"SelfRepublic", status:"plan", progress:40,
       link:"https://www.youtube.com/@RepablicSelf",
       desc:"YouTube × LINE × Notion で思想・仕事術・管理術を統合したブランド構築。",
-      subs: [] },
+      subs:[] },
     { name:"キャラクターショート動画", status:"pend", progress:15,
       link:"https://www.youtube.com/@BOINGMOCHA/shorts",
       desc:"キャラ IP によるショート動画集客。リソース不足のため一時保留。",
-      subs: [] },
+      subs:[] },
     { name:"バー活用プロジェクト", status:"pend", progress:10, link:null,
       desc:"場を持つことによるリアル導線構築。全体進捗に応じて再検討。",
-      subs: [] },
+      subs:[] },
   ],
 
-  // ── AutoCraft WBS（サブ） ──
-  subWbs: [
-    {
-      project:"AutoCraft — RubifyWord Pro", icon:"📝",
-      tasks: [
-        { name:"特定文字のみモード 設計・実装", pr:"high" },
-        { name:"TXT 入出力実装（漢字(よみ) 変換ロジック）", pr:"high" },
-        { name:"PDF 読み込み実装（pdfplumber / pymupdf）", pr:"mid" },
-        { name:"ライセンス認証方式選定（シリアルキー等）", pr:"mid" },
-        { name:"BOOTH 出品ページ作成（スクショ・説明文）", pr:"mid" },
-        { name:"テスト & QA（各 Word バージョン動作確認）", pr:"high" },
-        { name:"SNS / note 告知・リリース", pr:"mid" },
-      ]
-    },
-    {
-      project:"Army/Rush Note 記事", icon:"🎮",
-      tasks: [
-        { name:"投稿テーマ設定（攻略・日記・解説など）", pr:"high" },
-        { name:"Note アカウント整備・他ツールへのリンク設置", pr:"high" },
-        { name:"記事テンプレート作成（毎回使い回すフォーマット）", pr:"mid" },
-        { name:"初回記事 3 本作成 & 投稿", pr:"high" },
-        { name:"投稿スケジュール決定（週何本・何曜日）", pr:"mid" },
-        { name:"ハッシュタグ戦略（note_analyzer 活用）", pr:"low" },
-      ]
-    },
-    {
-      project:"HP マネタイズ", icon:"💰",
-      tasks: [
-        { name:"各ツール月間 PV 把握（GA / アクセス解析確認）", pr:"high" },
-        { name:"マネタイズ手法選定（アフィ / Pro 版誘導 / 広告）", pr:"high" },
-        { name:"各 HP に CTA ボタン追加（「Pro 版を購入」等）", pr:"mid" },
-        { name:"Gumroad / BOOTH 決済フロー確認", pr:"mid" },
-        { name:"クロスプロモーション設計（ツール間の相互リンク）", pr:"low" },
-        { name:"UTM パラメータで流入元トラッキング設定", pr:"low" },
-      ]
-    },
+  // ── サブプロジェクト WBS ──
+  subWbs:[
+    { project:"AutoCraft — RubifyWord Pro", icon:"📝",
+      tasks:[
+        { name:"特定文字のみモード 設計・実装",          pr:"high" },
+        { name:"TXT 入出力実装（漢字(よみ) 変換）",     pr:"high" },
+        { name:"PDF 読み込み実装（pdfplumber）",         pr:"mid"  },
+        { name:"ライセンス認証方式選定",                 pr:"mid"  },
+        { name:"BOOTH 出品ページ作成",                   pr:"mid"  },
+        { name:"テスト & QA",                            pr:"high" },
+        { name:"SNS / note 告知・リリース",               pr:"mid"  },
+      ]},
+    { project:"Army/Rush Note 記事", icon:"🎮",
+      tasks:[
+        { name:"投稿テーマ設定（攻略・日記・解説）",     pr:"high" },
+        { name:"Note アカウント整備・リンク設置",        pr:"high" },
+        { name:"記事テンプレート作成",                   pr:"mid"  },
+        { name:"初回記事 3 本作成 & 投稿",               pr:"high" },
+        { name:"投稿スケジュール決定",                   pr:"mid"  },
+        { name:"ハッシュタグ戦略（note_analyzer 活用）", pr:"low"  },
+      ]},
+    { project:"HP マネタイズ", icon:"💰",
+      tasks:[
+        { name:"各ツール月間 PV 把握（GA 確認）",                    pr:"high" },
+        { name:"マネタイズ手法選定（アフィ / Pro 版 / 広告）",      pr:"high" },
+        { name:"各 HP に CTA ボタン追加",                            pr:"mid"  },
+        { name:"Gumroad / BOOTH 決済フロー確認",                     pr:"mid"  },
+        { name:"クロスプロモーション設計（相互リンク）",              pr:"low"  },
+        { name:"UTM パラメータ 収益トラッキング設定",                 pr:"low"  },
+      ]},
   ],
 
-  // ── Notion との棲み分け ──
-  split: {
-    html: {
-      icon: "🗂️", title: "このダッシュボード（ops-dashboard）",
-      items: [
-        "プロジェクト全体の現状・進捗",
-        "WBS — タスク分解・優先度管理",
-        "戦略・フォーカスの意思決定",
-        "KPI の目標値管理",
-        "マネタイズ検討",
-      ]
-    },
-    notion: {
-      icon: "📒", title: "Notion",
-      items: [
-        "開発ログ・作業メモ",
-        "議事録・MTG記録",
-        "実績・リリース記録",
-        "調査・リサーチのストック",
-        "Claude との会話ログ保存",
-      ]
-    }
-  },
-
-  // ── フォーカス & KPI ──
-  focus: [
+  // ── フォーカス ──
+  focus:[
     "OshiPay2: クリエイターダッシュボード復元機能の実装（A-1）",
     "OshiPay2: サポーター応援履歴ページ my_history の実装（A-2）",
     "AutoCraft / RubifyWord Pro: 特定文字モード & TXT 出力 → BOOTH 出品",
     "90日副業ブログ完走 → PDF・マガジン商品化",
     "各ツール HP に CTA 追加して既存アクセスを即収益化",
   ],
-  kpi: [
-    { lbl:"OshiPay2 累計応援",    val:"テスト中",  tgt:"初リリース達成" },
-    { lbl:"AutoCraft 月間売上",   val:"¥0",        tgt:"¥10,000/月" },
-    { lbl:"LINE 登録数",          val:"—",          tgt:"100 人" },
-    { lbl:"YouTube 再生数",       val:"—",          tgt:"1,000 回/月" },
-    { lbl:"無料ツール利用数",     val:"—",          tgt:"500 件/月" },
+
+  // ── KPI ──
+  kpi:[
+    { lbl:"OshiPay2 累計応援",   val:"テスト中", tgt:"初リリース達成" },
+    { lbl:"AutoCraft 月間売上",  val:"¥0",       tgt:"¥10,000/月" },
+    { lbl:"LINE 登録数",         val:"—",         tgt:"100 人" },
+    { lbl:"YouTube 再生数",      val:"—",         tgt:"1,000 回/月" },
+    { lbl:"無料ツール利用数",    val:"—",         tgt:"500 件/月" },
   ]
 }
 
-// ─────────────────────────────────────────
+// ═══════════════════════════════════════════
 //  HELPERS
-// ─────────────────────────────────────────
+// ═══════════════════════════════════════════
 const SL = { run:"RUN", plan:"PLAN", pend:"HOLD" }
+const PROJ_COLOR = { oshipay2:"oshipay", autocraft:"autocraft", blog:"blog", other:"other" }
 
 function dotH(st) {
-  const c = st==="todo"?"dt": st==="doing"?"dd": st==="done"?"dn":"df"
+  const c = { todo:"dt", doing:"dd", done:"dn", future:"df" }[st] || "dt"
   return `<div class="dot ${c}"></div>`
 }
 function prH(p) {
-  if (p==="high") return `<span class="ph">🔴 高</span>`
-  if (p==="mid")  return `<span class="pm">🟡 中</span>`
-  if (p==="low")  return `<span class="pl">🟢 低</span>`
-  return `<span class="pf">⚪ 将来</span>`
+  return p==="high" ? `<span class="ph">🔴 高</span>`
+       : p==="mid"  ? `<span class="pm">🟡 中</span>`
+       : p==="low"  ? `<span class="pl">🟢 低</span>`
+       :               `<span class="pf">⚪ 将来</span>`
+}
+function fmtDate(str) {
+  const d = new Date(str)
+  return `${d.getMonth()+1}/${d.getDate()}`
+}
+function isOverdue(str) {
+  return new Date(str) < new Date(new Date().toDateString())
 }
 
-// ─────────────────────────────────────────
+// ═══════════════════════════════════════════
+//  CALENDAR
+// ═══════════════════════════════════════════
+let calYear, calMonth
+function initCal() {
+  const now = new Date()
+  calYear  = now.getFullYear()
+  calMonth = now.getMonth()
+}
+function renderCalendar() {
+  const now      = new Date()
+  const today    = now.getDate()
+  const isCurMo  = now.getFullYear()===calYear && now.getMonth()===calMonth
+  const firstDay = new Date(calYear, calMonth, 1).getDay()       // 0=Sun
+  const days     = new Date(calYear, calMonth+1, 0).getDate()
+  const monthNames = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
+
+  // Build event map for current calendar month
+  const evMap = {}
+  D.milestones.forEach(m => {
+    const d = new Date(m.date)
+    if (d.getFullYear()===calYear && d.getMonth()===calMonth) {
+      const k = d.getDate()
+      if (!evMap[k]) evMap[k] = []
+      evMap[k].push(m)
+    }
+  })
+
+  // Grid
+  let g = `<div class="cal-month-label">${calYear}年 ${monthNames[calMonth]}</div>
+    <div class="cal-grid">`
+  ;["日","月","火","水","木","金","土"].forEach((d,i) =>
+    g += `<div class="cal-dh${i===0?' sun':i===6?' sat':''}">${d}</div>`)
+  for (let i=0;i<firstDay;i++) g += `<div class="cal-cell"></div>`
+  for (let d=1;d<=days;d++) {
+    const dow   = (firstDay + d - 1) % 7
+    const cls   = [
+      isCurMo && d===today ? "today" : "",
+      dow===0 ? "sunday" : dow===6 ? "saturday" : "",
+      evMap[d] ? "has-ev" : ""
+    ].filter(Boolean).join(" ")
+    let dots = ""
+    if (evMap[d]) {
+      dots = `<div class="cal-dots">`
+      evMap[d].forEach(e => dots += `<div class="cal-dot dot-${PROJ_COLOR[e.proj]||'other'}"></div>`)
+      dots += `</div>`
+    }
+    g += `<div class="cal-cell ${cls}">${d}${dots}</div>`
+  }
+  g += `</div>`
+  g += `<div class="cal-nav">
+    <button class="cal-nav-btn" onclick="moveCal(-1)">◀</button>
+    <span class="cal-nav-label">月移動</span>
+    <button class="cal-nav-btn" onclick="moveCal(1)">▶</button>
+  </div>`
+
+  // Upcoming milestones (today → +70 days)
+  const lo = new Date(); lo.setHours(0,0,0,0)
+  const hi = new Date(lo); hi.setDate(hi.getDate()+70)
+  const upcoming = D.milestones
+    .filter(m => { const d=new Date(m.date); return d>=lo && d<=hi })
+    .sort((a,b)=>new Date(a.date)-new Date(b.date))
+
+  let ms = `<div class="cal-ms-title">📌 直近マイルストーン</div>`
+  if (!upcoming.length) {
+    ms += `<div style="font-size:.78rem;color:var(--sub)">マイルストーンなし</div>`
+  } else {
+    upcoming.forEach(m => {
+      const od = isOverdue(m.date)
+      ms += `<div class="cal-ms">
+        <div class="cal-ms-date${od?' overdue':''}">${fmtDate(m.date)}${od?' ⚠':''}
+        </div>
+        <div class="cal-ms-body">
+          <div class="cal-ms-label">${m.label}</div>
+          <div class="cal-ms-proj ${m.proj||'other'}">${
+            m.proj==='oshipay2'?'OshiPay2':m.proj==='autocraft'?'AutoCraft':m.proj==='blog'?'副業ブログ':'その他'
+          }</div>
+        </div>
+        ${prH(m.pr)}
+      </div>`
+    })
+  }
+
+  document.getElementById("cal-grid-wrap").innerHTML = g
+  document.getElementById("cal-ms-wrap").innerHTML   = ms
+}
+function moveCal(dir) {
+  calMonth += dir
+  if (calMonth < 0)  { calMonth=11; calYear-- }
+  if (calMonth > 11) { calMonth=0;  calYear++ }
+  renderCalendar()
+}
+
+// ═══════════════════════════════════════════
 //  RENDER
-// ─────────────────────────────────────────
+// ═══════════════════════════════════════════
 const app = document.getElementById("app")
 let h = ""
 
-/* ── Header ── */
+/* Header */
 h += `<div class="hd">
   <h1>${D.title}</h1>
   <div class="hd-sub">${D.subtitle}</div>
@@ -371,16 +488,49 @@ h += `<div class="hd">
 </div>`
 
 /* ── Notion 棲み分け ── */
-const sp = D.split
-h += `<div class="card"><h2>🗺️ 管理ツールの棲み分け</h2><div class="split-grid">`
-;[sp.html, sp.notion].forEach(s => {
-  h += `<div class="split-item">
-    <h4>${s.icon} ${s.title}</h4>
-    <ul>`
-  s.items.forEach(i => h += `<li>${i}</li>`)
-  h += `</ul></div>`
-})
-h += `</div></div>`
+h += `<div class="card">
+  <h2>🗺️ 管理ツールの棲み分け</h2>
+  <div class="split-grid">
+    <div class="split-item html-side">
+      <div class="split-head">🗂️ このダッシュボード（ops-dashboard）</div>
+      <div class="split-rule">▌ 前向き — 戦略・意思決定</div>
+      <ul>
+        <li>プロジェクト現状・進捗・WBS</li>
+        <li>マイルストーン・スケジュール</li>
+        <li>今何をやるか の優先順位決定</li>
+        <li>KPI 目標管理</li>
+        <li>マネタイズ戦略の検討</li>
+      </ul>
+    </div>
+    <div class="split-item notion-side">
+      <div class="split-head">📒 Notion</div>
+      <div class="split-rule">▌ 後ろ向き — 実績・記録</div>
+      <ul>
+        <li>開発ログ・作業メモ</li>
+        <li>議事録・Claude との会話記録</li>
+        <li>実績・リリース履歴</li>
+        <li>調査・リサーチのストック</li>
+        <li>ナレッジの蓄積</li>
+      </ul>
+    </div>
+  </div>
+  <div class="split-rule-box">
+    <strong>判断軸：</strong>「これから何をするか」→ ここ　／　「あの時何をしたか」→ Notion
+  </div>
+</div>`
+
+/* ── Calendar ── */
+h += `<div class="card">
+  <h2>📅 カレンダー & マイルストーン</h2>
+  <div class="cal-wrap">
+    <div class="cal-left">
+      <div id="cal-grid-wrap"></div>
+    </div>
+    <div class="cal-right">
+      <div id="cal-ms-wrap"></div>
+    </div>
+  </div>
+</div>`
 
 /* ── OshiPay2 (featured) ── */
 const m = D.main
@@ -402,27 +552,21 @@ h += `</div>
 m.done.forEach(d => h += `<li>${d}</li>`)
 h += `</ul>
   <h3>📋 WBS — 残タスク</h3>`
-
-m.wbs.forEach((ep, ei) => {
+m.wbs.forEach((ep,ei) => {
   h += `<div class="acc">
     <div class="acc-hd" onclick="tog('ep${ei}')">
-      <span class="acc-title">
-        <span class="arr" id="ar-ep${ei}">▶</span>
-        ${ep.label}
-      </span>
+      <span class="acc-title"><span class="arr" id="ar-ep${ei}">▶</span> ${ep.label}</span>
       <span class="${ep.prClass}">${ep.prLabel}</span>
     </div>
     <div class="acc-body" id="ep${ei}">`
-  ep.tasks.forEach(t => {
-    h += `<div class="wt">
-      ${dotH(t.st)}
-      <div class="wt-body">
-        <div class="wt-name"><span class="wt-id">[${t.id}]</span>${t.name}</div>
-        <div class="wt-detail">${t.detail}</div>
-      </div>
-      ${prH(t.pr)}
-    </div>`
-  })
+  ep.tasks.forEach(t => h += `<div class="wt">
+    ${dotH(t.st)}
+    <div class="wt-body">
+      <div class="wt-name"><span class="wt-id">[${t.id}]</span>${t.name}</div>
+      <div class="wt-detail">${t.detail}</div>
+    </div>
+    ${prH(t.pr)}
+  </div>`)
   h += `</div></div>`
 })
 h += `</div>` // end featured
@@ -435,7 +579,7 @@ D.projects.forEach(p => {
       <div class="proj-name">${p.name}</div>
       <div class="proj-right">
         <span class="badge ${p.status}">${SL[p.status]}</span>
-        ${p.link ? `<a href="${p.link}" target="_blank" class="btn">Open →</a>` : ""}
+        ${p.link?`<a href="${p.link}" target="_blank" class="btn">Open →</a>`:""}
       </div>
     </div>
     <div class="desc">${p.desc}</div>`
@@ -444,24 +588,15 @@ D.projects.forEach(p => {
     p.subs.forEach(s => h += `<div class="sub-item">${s}</div>`)
     h += `</div>`
   }
-  h += `<div class="pb"><div class="pf-bar" style="width:${p.progress}%"></div></div>
-  </div>`
+  h += `<div class="pb"><div class="pf-bar" style="width:${p.progress}%"></div></div></div>`
 })
 h += `</div>`
 
-/* ── Sub-project WBS ── */
-h += `<div class="card"><h2>📋 サブプロジェクト WBS</h2>
-  <div class="sub-grid">`
+/* ── Sub WBS ── */
+h += `<div class="card"><h2>📋 サブプロジェクト WBS</h2><div class="sub-grid">`
 D.subWbs.forEach(sp => {
-  h += `<div class="sub-card">
-    <h4>${sp.icon} ${sp.project}</h4>`
-  sp.tasks.forEach(t => {
-    h += `<div class="st">
-      ${dotH("todo")}
-      <span class="st-name">${t.name}</span>
-      ${prH(t.pr)}
-    </div>`
-  })
+  h += `<div class="sub-card"><h4>${sp.icon} ${sp.project}</h4>`
+  sp.tasks.forEach(t => h += `<div class="st">${dotH("todo")}<span class="st-name">${t.name}</span>${prH(t.pr)}</div>`)
   h += `</div>`
 })
 h += `</div></div>`
@@ -482,24 +617,25 @@ h += `</div></div>`
 
 app.innerHTML = h
 
-// ─────────────────────────────────────────
-//  ACCORDION
-// ─────────────────────────────────────────
-function tog(id) {
-  const body  = document.getElementById(id)
-  const arrow = document.getElementById("ar-" + id)
-  const open  = body.style.display === "block"
-  body.style.display = open ? "none" : "block"
-  if (arrow) arrow.classList.toggle("open", !open)
-}
+// ── Init ──
+initCal()
+renderCalendar()
 
-// Epic A（必須）と D（リリース）をデフォルト展開
+// Accordion default open: Epic A, D
 ;["ep0","ep3"].forEach(id => {
-  const body  = document.getElementById(id)
-  const arrow = document.getElementById("ar-" + id)
-  if (body)  body.style.display = "block"
-  if (arrow) arrow.classList.add("open")
+  const b = document.getElementById(id)
+  const a = document.getElementById("ar-"+id)
+  if (b) b.style.display="block"
+  if (a) a.classList.add("open")
 })
+
+function tog(id) {
+  const b = document.getElementById(id)
+  const a = document.getElementById("ar-"+id)
+  const o = b.style.display==="block"
+  b.style.display = o?"none":"block"
+  if (a) a.classList.toggle("open",!o)
+}
 </script>
 </body>
 </html>
