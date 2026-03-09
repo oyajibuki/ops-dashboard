@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>副業 総合管理ダッシュボード（Private）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4cd964;
+            --secondary-color: #ff2d55;
+            --bg-glass: rgba(20, 20, 30, 0.65);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-sub: #a0a0b0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: var(--text-main);
+            /* Dark background with gradient overlay on user image */
+            background: linear-gradient(135deg, rgba(10, 10, 20, 0.85), rgba(20, 20, 40, 0.9)), url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+            background: rgba(30, 30, 45, 0.75);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Project Items */
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            padding: 16px;
+            /* background: rgba(255,255,255,0.03); */
+            border-bottom: 1px solid var(--border-glass);
+        }
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .project-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            background: rgba(255,255,255,0.1);
+            color: #ccc;
+        }
+        .status-active { background: rgba(76, 217, 100, 0.2); color: #4cd964; }
+        .status-planning { background: rgba(255, 204, 0, 0.2); color: #ffcc00; }
+        .status-pending { background: rgba(255, 45, 85, 0.2); color: #ff2d55; }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .progress-container {
+            flex-grow: 1;
+        }
+        .progress-label {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .progress-bar-bg {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            height: 6px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease-out;
+        }
+
+        .project-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-link {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .btn-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .project-item {
+                grid-template-columns: 1fr;
+            }
+            .project-actions {
+                justify-content: flex-end;
+                margin-top: 10px;
+            }
+        }
+
+        /* List Styling */
+        ul.task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul.task-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-glass);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-sub);
+        }
+        ul.task-list li:last-child {
+            border-bottom: none;
+        }
+        .checkbox-mock {
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--text-sub);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Schedule Grid */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="app">
+        <!-- Content will be injected here by JavaScript -->
+    </div>
+
+    <script>
+        // =================================================================
+        // ▼ データ編集エリア (ここに追記・修正するだけで反映されます)
+        // =================================================================
+        const config = {
+            appTitle: "My Side Project Dashboard",
+            subTitle: "副業・個人開発 総合管理 (Private)",
+            
+            // プロジェクト一覧
+            projects: [
+                {
+                    name: "おやじの副業ブログ",
+                    status: "running", // running, planning, pending, idea
+                    progress: 20,
+                    link: "https://note.com/crisp_rue6588/m/mf074212eec05",
+                    description: "日々の気づきや副業の記録を綴るNoteブログ。定期的な更新を目指す。"
+                },
+                {
+                    name: "業務改善ツール販売",
+                    status: "running",
+                    progress: 40,
+                    link: "https://oyajibuki.github.io/tools/",
+                    description: "GASやExcelマクロなど、実務で使える業務効率化ツールを販売するサイト。"
+                },
+                {
+                    name: "✍️ Fit-Sign",
+                    status: "running",
+                    progress: 85,
+                    link: "https://fit-sign.streamlit.app/",
+                    description: "スマホでQRを読み取るだけで電子契約が完結するアプリ。2026/3/9 ローンチ済み。"
+                },
+                {
+                    name: "キャラクターショート動画",
+                    status: "pending",
+                    progress: 5,
+                    link: "https://YOURNAME.github.io/shorts", // リンクがあれば
+                    description: "オリジナルキャラクターを使ったショート動画制作プロジェクト。現在は構想段階。"
+                },
+                {
+                    name: "selfrepablic",
+                    status: "planning",
+                    progress: 15,
+                    link: "https://YOURNAME.github.io/selfrepablic",
+                    description: "自己表現のための新しいプラットフォーム開発。"
+                },
+                {
+                    name: "バー活用",
+                    status: "idea",
+                    progress: 10,
+                    link: null, // リンクなし
+                    description: "バーを活用した新しいビジネスモデルの検討。"
+                }
+            ],
+
+            // 今月のタスク (WBS)
+            tasks: [
+                { text: "確定申告 (完了: 3/8)", done: true },
+                { text: "ツール1本選定", done: false },
+                { text: "ツール販売ページ作成の仕上げ", done: false },
+                { text: "ブログ初期設計と記事ストック", done: false },
+                { text: "HP全体構成レビュー", done: false }
+            ],
+
+            // メモ
+            memos: [
+                "平日：30〜60分 (朝活推奨)",
+                "週末：集中作業 2〜3h (カフェ等)"
+            ]
+        };
+        // =================================================================
+
+
+        // --- 初期化処理 ---
+        function render() {
+            const app = document.getElementById('app');
+            
+            // Header
+            let html = `
+                <div>
+                    <h1>${config.appTitle}</h1>
+                    <div class="subtitle">${config.subTitle}</div>
+                </div>
+            `;
+
+            // Projects Card
+            html += `<div class="glass-card"><h2>🚀 Projects</h2>`;
+            
+            config.projects.forEach(p => {
+                const statusClass = getStatusClass(p.status);
+                const statusLabel = getStatusLabel(p.status);
+                const linkHtml = p.link 
+                    ? `<div class="project-actions"><a href="${p.link}" target="_blank" class="btn-link">Open Site →</a></div>` 
+                    : `<div class="project-actions"><span style="color:#666; font-size:0.8rem;">No Link</span></div>`;
+
+                html += `
+                <div class="project-item">
+                    <div>
+                        <div class="project-header">
+                            <span class="project-title">${p.name}</span>
+                            <span class="status-badge ${statusClass}">${statusLabel}</span>
+                        </div>
+                        <div class="project-desc">${p.description}</div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: ${p.progress}%"></div>
+                        </div>
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>${p.progress}%</span>
+                        </div>
+                    </div>
+                    ${linkHtml}
+                </div>`;
+            });
+            html += `</div>`;
+
+            // Tasks Card
+            html += `<div class="glass-card"><h2>📅 Monthly Tasks</h2><ul class="task-list">`;
+            config.tasks.forEach(t => {
+                const check = t.done ? "☑" : "☐";
+                const style = t.done ? "text-decoration: line-through; opacity: 0.6;" : "";
+                html += `<li style="${style}"><span style="font-size:1.2rem; margin-right:8px;">${check}</span> ${t.text}</li>`;
+            });
+            html += `</ul></div>`;
+
+            // Memo Card
+            html += `<div class="glass-card"><h2>📝 Memo</h2>`;
+            config.memos.forEach(m => {
+                html += `<p style="color:var(--text-sub); margin:5px 0;">• ${m}</p>`;
+            });
+            html += `</div>`;
+
+            app.innerHTML = html;
+        }
+
+        function getStatusClass(status) {
+            switch(status) {
+                case 'running': return 'status-active';
+                case 'planning': return 'status-planning';
+                case 'pending': return 'status-pending';
+                default: return '';
+            }
+        }
+
+        function getStatusLabel(status) {
+            switch(status) {
+                case 'running': return 'RUNNING';
+                case 'planning': return 'PLANNING';
+                case 'pending': return 'PENDING';
+                case 'idea': return 'IDEA';
+                default: return status.toUpperCase();
+            }
+        }
+
+        // Run
+        render();
+    </script>
+</body>
+</html>
