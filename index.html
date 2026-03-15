@@ -222,7 +222,7 @@
 const D = {
   title:   "副業・個人開発 統合ダッシュボード",
   subtitle:"全プロジェクトの現状と戦略を一元管理",
-  updated: "2026-03-11",
+  updated: "2026-03-16",
 
   // ── ブロッカー（最優先・終わるまで他作業NG）──
   blockers: [
@@ -231,12 +231,12 @@ const D = {
   // ── カレンダー マイルストーン ──
   // Claudeに「GCalから同期して」と言えば自動更新
   milestones: [
-    { date:"2026-03-14", label:"💈 床屋（予約済み）", proj:"other", pr:"high" },
-    { date:"2026-03-14", label:"✅ おやじブログ 最終日", proj:"blog", pr:"high" },
-    { date:"2026-03-15", label:"💈 床屋（予約済み）", proj:"other", pr:"high" },
-    { date:"2026-03-15", label:"🥔 じゃがいも植え", proj:"other", pr:"high" },
-    { date:"2026-03-20", label:"OshiPay 営業・ランサーズ等手配", proj:"oshipay2", pr:"high" },
-    { date:"2026-03-27", label:"SelfRepublic ネタ集め（1-2週間分）", proj:"other", pr:"mid" },
+    { date:"2026-03-17", label:"📊 OshiPay 営業方針決定：リスト50円×500件 or リスト＆送信100円×200件", proj:"oshipay2", pr:"high" },
+    { date:"2026-03-20", label:"🥔 じゃがいも植え（金〜日いずれか）", proj:"other", pr:"mid" },
+    { date:"2026-03-22", label:"💈 床屋 18:00", proj:"other", pr:"high" },
+    { date:"2026-03-22", label:"📱 子供の携帯返却 期限", proj:"other", pr:"high" },
+    { date:"2026-03-31", label:"🌏 OshiPay 海外戦略（Stripe強み活用）初期検討", proj:"oshipay2", pr:"mid" },
+    { date:"2026-04-15", label:"SelfRepublic ネタ集め開始", proj:"other", pr:"mid" },
   ],
 
   // ── メインプロジェクト: OshiPay2 ──
@@ -259,10 +259,12 @@ const D = {
     wbs:[
       { id:"A", label:"A. 営業・普及活動（最優先）", prClass:"ph", prLabel:"🔴 高",
         tasks:[
-          { id:"O-1", name:"ランサーズ等で営業部隊手配", detail:"1ヶ月間営業をかけまくり、初期ユーザーを獲得する", pr:"high", st:"todo" },
-          { id:"O-2", name:"SNSでのターゲット精査", detail:"OshiPayが刺さる層の洗い出しとアプローチ手法検討", pr:"high", st:"todo" },
-          { id:"O-3", name:"営業トークスクリプト作成", detail:"草の根営業用に伝わりやすい説明資料・スクリプトを準備", pr:"high", st:"todo" },
-          { id:"O-4", name:"利用者向けマニュアル作成", detail:"導入のハードルを下げるための使い方ガイド", pr:"mid", st:"todo" },
+          { id:"O-1", name:"ランサーズ 営業プラン最終決定（3/17〆）", detail:"現在2万円で掲示板出稿中。①リストのみ50円/件×500件 vs ②リスト＆送信100円/件×200件 で検討中。②（200件）優勢。", pr:"high", st:"doing" },
+          { id:"O-2", name:"autoDM ツール活用（X・Instagram）", detail:"DM自動化ツール完成済み。200件プランと組み合わせて活用検討。BAN防止の待機時間・CSV管理実装済み。", pr:"high", st:"doing" },
+          { id:"O-3", name:"海外戦略（Stripe強み活用）", detail:"Stripe決済のため海外対応は強い。英語圏クリエイター向け営業・SNSアプローチを検討中。", pr:"mid", st:"todo" },
+          { id:"O-4", name:"SNSでのターゲット精査", detail:"OshiPayが刺さる層の洗い出しとアプローチ手法検討", pr:"high", st:"todo" },
+          { id:"O-5", name:"営業トークスクリプト作成", detail:"草の根営業用に伝わりやすい説明資料・スクリプトを準備", pr:"high", st:"todo" },
+          { id:"O-6", name:"利用者向けマニュアル作成", detail:"導入のハードルを下げるための使い方ガイド", pr:"mid", st:"todo" },
         ]},
       { id:"B", label:"B. NFT・機能拡張（フェーズ3）", prClass:"pf", prLabel:"⚪ 凍結中",
         tasks:[
@@ -275,17 +277,19 @@ const D = {
   projects:[
     { name:"OshiPay2",  status:"run", progress:80,
       link:"https://oshipay2jp.streamlit.app",
-      desc:"推し活応援・投げ銭プラットフォーム。開発は一旦完了・当面は営業部隊等でユーザー獲得に注力。NFT等は機能凍結。",
-      subs:[] },
+      desc:"推し活応援・投げ銭プラットフォーム。開発完了・ランサーズ2万円で営業部隊掲示板出稿中。3/17に方針決定（リスト500件 or 送信込み200件）。autoDM自動化ツールも完成。Stripe決済を活かした海外戦略も検討開始。",
+      subs:["ランサーズ掲示板出稿中（2万円）→ 3/17 方針決定",
+            "autoDM: X・Instagram DM自動化ツール完成済み",
+            "海外戦略（英語圏クリエイター向け）初期検討中"] },
     { name:"AutoCraft", status:"run", progress:50,
       link:"https://oyajibuki.github.io/tools/",
       desc:"業務改善ツールの開発・販売ブランド。次の新規ツール開発を検討中。",
       subs:["RubifyWord Pro（販売方針検討中：NotebookLM誤読問題あり）",
             "新規: オイルショックレーダ",
             "新規: 関染料薬品株式会社向け管理・困りごと解消ツール"] },
-    { name:"おやじの副業ブログ", status:"run", progress:99,
+    { name:"おやじの副業ブログ", status:"run", progress:100,
       link:"https://note.com/crisp_rue6588",
-      desc:"明日で更新終了。以降はPDFアーカイブ販売＆メンバーシップへ移行。",
+      desc:"更新終了・アーカイブ化済み。過去記事をメンバーシップに移行完了。ユーザー数は一時減少したが移行として割り切り。",
       subs:["メンバーシップ① 300円/月（アーカイブ＋月1回開発ログ）",
             "メンバーシップ② 980円/月"] },
     { name:"SelfRepublic", status:"plan", progress:40,
@@ -303,6 +307,12 @@ const D = {
 
   // ── サブプロジェクト WBS ──
   subWbs:[
+    { project:"OshiPay — 海外戦略", icon:"🌏",
+      tasks:[
+        { name:"英語圏ターゲット調査（VTuber・アイドル等）",  pr:"mid" },
+        { name:"英語版トークスクリプト / LP 作成",           pr:"mid" },
+        { name:"海外SNS（X・Instagram）での反応テスト",       pr:"low" },
+      ]},
     { project:"AutoCraft — 新規ツール検討", icon:"🛠",
       tasks:[
         { name:"オイルショックレーダ 要件定義",          pr:"mid" },
@@ -310,9 +320,9 @@ const D = {
       ]},
     { project:"おやじブログ 収益化", icon:"📖",
       tasks:[
-        { name:"PDFアーカイブ化・販売ページ作成",        pr:"high" },
-        { name:"メンバーシップ①（300円コース）開設",    pr:"high" },
-        { name:"メンバーシップ②（980円コース）開設",    pr:"high" },
+        { name:"PDFアーカイブ化・販売ページ作成",        pr:"mid" },
+        { name:"メンバーシップ①（300円コース）開設",    pr:"mid" },
+        { name:"メンバーシップ②（980円コース）開設",    pr:"mid" },
       ]},
     { project:"HP マネタイズ", icon:"💰",
       tasks:[
@@ -322,10 +332,10 @@ const D = {
 
   // ── フォーカス ──
   focus:[
-    "💈🛌 明日・明後日のプライベート予定（散髪・じゃがいも植え）をこなす",
-    "OshiPay営業活動: 戦略、スクリプト作成、ターゲット精査、営業部隊手配",
-    "ブログ終了対応: PDFまとめ、過去アーカイブ化、メンバーシップ開設",
-    "SelfRepublic: 1〜2週間分のネタ集め",
+    "📊 【3/17〆】OshiPay営業プラン決定: リスト50円×500件 or リスト＆送信100円×200件（200件優勢）",
+    "🤖 autoDM自動化ツール完成 → 200件プランと組み合わせた活用シナリオ検討",
+    "🌏 OshiPay 海外戦略: Stripe決済の強みを活かした英語圏クリエイター向け営業",
+    "🥔💈📱 プライベート: じゃがいも（3/20〜22）・床屋（3/22 18:00）・子供の携帯返却（3/22まで）",
     "AutoCraft新規: オイルショックレーダ / 薬品管理ツールの検討"
   ],
 
