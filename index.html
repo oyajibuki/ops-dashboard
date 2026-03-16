@@ -222,7 +222,7 @@
 const D = {
   title:   "副業・個人開発 統合ダッシュボード",
   subtitle:"全プロジェクトの現状と戦略を一元管理",
-  updated: "2026-03-16",
+  updated: "2026-03-17",
 
   // ── ブロッカー（最優先・終わるまで他作業NG）──
   blockers: [
@@ -266,7 +266,19 @@ const D = {
           { id:"O-5", name:"営業トークスクリプト作成", detail:"草の根営業用に伝わりやすい説明資料・スクリプトを準備", pr:"high", st:"todo" },
           { id:"O-6", name:"利用者向けマニュアル作成", detail:"導入のハードルを下げるための使い方ガイド", pr:"mid", st:"todo" },
         ]},
-      { id:"B", label:"B. NFT・機能拡張（フェーズ3）", prClass:"pf", prLabel:"⚪ 凍結中",
+      { id:"B", label:"B. マイクロサイト（creator.html）", prClass:"ph", prLabel:"🔴 高",
+        tasks:[
+          { id:"M-1", name:"プロフィール作成シートの完成", detail:"Supabase連携・bio/genre/slug/photo_url入力→保存フロー", pr:"high", st:"doing" },
+          { id:"M-2", name:"プロフィール編集シートの作成", detail:"既存クリエイターが後からプロフィールを編集できる画面", pr:"high", st:"todo" },
+          { id:"M-3", name:"導線の確認", detail:"ランキングページ→creator.html等、各ページ間のナビゲーション整備", pr:"high", st:"todo" },
+          { id:"M-4", name:"英語版ページの作成", detail:"法務系3点・決済画面・Stripe対応確認も含む", pr:"mid", st:"todo" },
+          { id:"M-5", name:"動作テスト・まとめてプッシュ", detail:"E2Eテスト後にGitHub Pages反映", pr:"mid", st:"todo" },
+        ]},
+      { id:"C", label:"C. Discord ボット", prClass:"pm", prLabel:"🟡 中",
+        tasks:[
+          { id:"D-1", name:"Discord ボット開発", detail:"OshiPay連携またはコミュニティ向けのDiscordボット。要件定義から開始。", pr:"mid", st:"todo" },
+        ]},
+      { id:"D", label:"D. NFT・機能拡張（フェーズ3）", prClass:"pf", prLabel:"⚪ 凍結中",
         tasks:[
           { id:"N-1", name:"NFT等新機能追加", detail:"利用者が増えるまで2〜3ヶ月は凍結。現状維持と営業に注力", pr:"low", st:"future" },
         ]},
@@ -332,11 +344,10 @@ const D = {
 
   // ── フォーカス ──
   focus:[
-    "📊 【3/17〆】OshiPay営業プラン決定: リスト50円×500件 or リスト＆送信100円×200件（200件優勢）",
-    "🤖 autoDM自動化ツール完成 → 200件プランと組み合わせた活用シナリオ検討",
+    "🖼️ 【3/18〜19】OshiPay マイクロサイト: プロフィール作成/編集シート・導線・英語版・テスト",
+    "🤖 【3/18〜19】Discord ボット開発 開始",
     "🌏 OshiPay 海外戦略: Stripe決済の強みを活かした英語圏クリエイター向け営業",
     "🥔💈📱 プライベート: じゃがいも（3/20〜22）・床屋（3/22 18:00）・子供の携帯返却（3/22まで）",
-    "AutoCraft新規: オイルショックレーダ / 薬品管理ツールの検討"
   ],
 
   // ── KPI ──
@@ -632,8 +643,8 @@ app.innerHTML = h
 initCal()
 renderCalendar()
 
-// Accordion default open: Epic A, D
-;["ep0","ep3"].forEach(id => {
+// Accordion default open: Epic A, B
+;["ep0","ep1"].forEach(id => {
   const b = document.getElementById(id)
   const a = document.getElementById("ar-"+id)
   if (b) b.style.display="block"
