@@ -222,7 +222,7 @@
 const D = {
   title:   "副業・個人開発 統合ダッシュボード",
   subtitle:"全プロジェクトの現状と戦略を一元管理",
-  updated: "2026-03-17",
+  updated: "2026-03-18",
 
   // ── ブロッカー（最優先・終わるまで他作業NG）──
   blockers: [
@@ -255,6 +255,11 @@ const D = {
       "クリエイター・サポーターダッシュボード復元機能",
       "Supabase移行・本番デプロイ完了",
       "UI/UX 微修正・バグ対応（直近マイルストーン完了）",
+      "SNSバッジ整備（Facebook/LINE追加・グレーアイコン統一）",
+      "マイクロサイト導線完成（ランキング→MS・MS→応援ページ・返信DB↔MS/編集）",
+      "応援ページ: クリエイター写真表示 & URL短縮（?page=support&creator={slug}）",
+      "how-it-works.html: Step7更新・Step8（マイクロサイト）新規追加・Step9繰り下げ",
+      "返信ダッシュボード: ボタンスタイル統一（secondary・グレーアウトライン）",
     ],
     wbs:[
       { id:"A", label:"A. 営業・普及活動（最優先）", prClass:"ph", prLabel:"🔴 高",
@@ -268,11 +273,11 @@ const D = {
         ]},
       { id:"B", label:"B. マイクロサイト（creator.html）", prClass:"ph", prLabel:"🔴 高",
         tasks:[
-          { id:"M-1", name:"プロフィール作成シートの完成", detail:"Supabase連携・bio/genre/slug/photo_url入力→保存フロー", pr:"high", st:"doing" },
-          { id:"M-2", name:"プロフィール編集シートの作成", detail:"既存クリエイターが後からプロフィールを編集できる画面", pr:"high", st:"todo" },
-          { id:"M-3", name:"導線の確認", detail:"ランキングページ→creator.html等、各ページ間のナビゲーション整備", pr:"high", st:"todo" },
-          { id:"M-4", name:"英語版ページの作成", detail:"法務系3点・決済画面・Stripe対応確認も含む", pr:"mid", st:"todo" },
-          { id:"M-5", name:"動作テスト・まとめてプッシュ", detail:"E2Eテスト後にGitHub Pages反映", pr:"mid", st:"todo" },
+          { id:"M-1", name:"プロフィール作成・編集シートの完成", detail:"bio/genre/slug/photo_url入力→保存→マイクロサイト確認ボタン。返信DBから編集ボタンで直接遷移も実装済み。", pr:"high", st:"done" },
+          { id:"M-2", name:"導線の完成", detail:"ランキング→MS・MS→応援ページ（短縮URL+写真表示）・返信DB↔MS/編集ボタン 全導線実装済み。", pr:"high", st:"done" },
+          { id:"M-3", name:"英語版ページの更新", detail:"en/creator.html に SNSバッジ・短縮URL等を同期済み。法務系ページ・Stripe対応は別途確認。", pr:"mid", st:"done" },
+          { id:"M-4", name:"how-it-works.html 更新", detail:"Step7テキスト修正・Step8マイクロサイト新規追加・Step9繰り下げ・画像差し替え完了。", pr:"mid", st:"done" },
+          { id:"M-5", name:"E2Eテスト・本番動作確認", detail:"Streamlit Cloud反映後の全画面動作確認（応援ページ・マイクロサイト・返信ダッシュボード）", pr:"high", st:"doing" },
         ]},
       { id:"C", label:"C. Discord ボット", prClass:"pm", prLabel:"🟡 中",
         tasks:[
@@ -344,8 +349,9 @@ const D = {
 
   // ── フォーカス ──
   focus:[
-    "🖼️ 【3/18〜19】OshiPay マイクロサイト: プロフィール作成/編集シート・導線・英語版・テスト",
-    "🤖 【3/18〜19】Discord ボット開発 開始",
+    "✅ 【3/18完了】OshiPay マイクロサイト: 導線・SNSバッジ・応援ページ写真/短縮URL・ボタンUI・how-it-works更新",
+    "🧪 【3/18〜19】OshiPay 本番E2Eテスト（全画面動作確認・Streamlit Cloud反映確認）",
+    "🤖 【3/19〜】Discord ボット開発 開始",
     "🌏 OshiPay 海外戦略: Stripe決済の強みを活かした英語圏クリエイター向け営業",
     "🥔💈📱 プライベート: じゃがいも（3/20〜22）・床屋（3/22 18:00）・子供の携帯返却（3/22まで）",
   ],
