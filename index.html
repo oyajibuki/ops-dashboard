@@ -260,6 +260,10 @@ const D = {
       "応援ページ: クリエイター写真表示 & URL短縮（?page=support&creator={slug}）",
       "how-it-works.html: Step7更新・Step8（マイクロサイト）新規追加・Step9繰り下げ",
       "返信ダッシュボード: ボタンスタイル統一（secondary・グレーアウトライン）",
+      "HEIC対応: resize-tool & ClearCut に heic2any 追加（Windows Chrome対応）",
+      "QR/サポートURL修正: BASE_URL trailing slash & oshipay.streamlit.app に修正",
+      "ランキング: display_name をDBから正しく取得・保存（表示名「ぎん」反映）",
+      "ランキング: クリエイターアイコン表示（photo_url 丸形アバター・プレースホルダー🎤）",
     ],
     wbs:[
       { id:"A", label:"A. 営業・普及活動（最優先）", prClass:"ph", prLabel:"🔴 高",
@@ -278,6 +282,7 @@ const D = {
           { id:"M-3", name:"英語版ページの更新", detail:"en/creator.html に SNSバッジ・短縮URL等を同期済み。法務系ページ・Stripe対応は別途確認。", pr:"mid", st:"done" },
           { id:"M-4", name:"how-it-works.html 更新", detail:"Step7テキスト修正・Step8マイクロサイト新規追加・Step9繰り下げ・画像差し替え完了。", pr:"mid", st:"done" },
           { id:"M-5", name:"E2Eテスト・本番動作確認", detail:"Streamlit Cloud反映後の全画面動作確認（応援ページ・マイクロサイト・返信ダッシュボード）", pr:"high", st:"doing" },
+          { id:"M-6", name:"メール送信機能（QR共有 & サポーター登録通知）", detail:"①QRコード保存ボタン下に「📧 QRと情報をメールで送信」追加 ②サポーター新規登録時にメール通知（ボタン or 自動）", pr:"mid", st:"todo" },
         ]},
       { id:"C", label:"C. Discord ボット", prClass:"pm", prLabel:"🟡 中",
         tasks:[
@@ -349,9 +354,10 @@ const D = {
 
   // ── フォーカス ──
   focus:[
-    "✅ 【3/18完了】OshiPay マイクロサイト: 導線・SNSバッジ・応援ページ写真/短縮URL・ボタンUI・how-it-works更新",
-    "🧪 【3/18〜19】OshiPay 本番E2Eテスト（全画面動作確認・Streamlit Cloud反映確認）",
-    "🤖 【3/19〜】Discord ボット開発 開始",
+    "🎤 【3/18】ピッチ当日！OshiPay デモ・説明準備完了",
+    "✅ 【3/18完了】ランキング: display_name正常化・アイコン表示・HEIC対応・URL修正など",
+    "📧 【3/19予定】メール送信機能: QRコード共有 & サポーター登録通知",
+    "🧪 【3/19】OshiPay 本番E2Eテスト（全画面動作確認・Streamlit Cloud反映確認）",
     "🌏 OshiPay 海外戦略: Stripe決済の強みを活かした英語圏クリエイター向け営業",
     "🥔💈📱 プライベート: じゃがいも（3/20〜22）・床屋（3/22 18:00）・子供の携帯返却（3/22まで）",
   ],
