@@ -222,7 +222,7 @@
 const D = {
   title:   "副業・個人開発 統合ダッシュボード",
   subtitle:"全プロジェクトの現状と戦略を一元管理",
-  updated: "2026-03-19",
+  updated: "2026-03-23",
 
   // ── ブロッカー（最優先・終わるまで他作業NG）──
   blockers: [
@@ -231,56 +231,51 @@ const D = {
   // ── カレンダー マイルストーン ──
   // Claudeに「GCalから同期して」と言えば自動更新
   milestones: [
-    { date:"2026-03-17", label:"📊 OshiPay 営業方針決定：リスト50円×500件 or リスト＆送信100円×200件", proj:"oshipay2", pr:"high" },
-    { date:"2026-03-20", label:"🥔 じゃがいも植え（金〜日いずれか）", proj:"other", pr:"mid" },
-    { date:"2026-03-22", label:"💈 床屋 18:00", proj:"other", pr:"high" },
-    { date:"2026-03-22", label:"📱 子供の携帯返却 期限", proj:"other", pr:"high" },
+    { date:"2026-03-24", label:"📊 OshiPay ピッチ資料 完成版", proj:"oshipay2", pr:"high" },
+    { date:"2026-03-25", label:"🏃 秋葉原・下北沢 現地営業", proj:"oshipay2", pr:"high" },
+    { date:"2026-03-31", label:"📱 こども携帯返却 期限", proj:"other", pr:"high" },
+    { date:"2026-03-31", label:"📣 SNS営業 200件 DM", proj:"oshipay2", pr:"high" },
     { date:"2026-03-31", label:"🌏 OshiPay 海外戦略（Stripe強み活用）初期検討", proj:"oshipay2", pr:"mid" },
     { date:"2026-04-15", label:"SelfRepublic ネタ集め開始", proj:"other", pr:"mid" },
   ],
 
   // ── メインプロジェクト: OshiPay2 ──
   main: {
-    name:"OshiPay2",
-    desc:"推し活応援・投げ銭プラットフォーム。クリエイターがQRコードを表示するだけでサポーターから応援を受け取れる。Stripe決済 + Supabase (PostgreSQL) + Streamlit Cloud で構築・運用中。",
-    progress: 60,
+    name:"OshiPay（本番）",
+    desc:"推し活応援・投げ銭プラットフォーム。クリエイターがQRコードを表示するだけでサポーターから応援を受け取れる。Stripe Connect + Supabase + Streamlit Cloud + GitHub Pages で本番稼働中。oshipay.me ドメイン取得済み。",
+    progress: 85,
     links:[
-      { label:"🚀 App",   url:"https://oshipay2jp.streamlit.app" },
-      { label:"GitHub",   url:"https://github.com/oyajibuki/OshiPay2" },
+      { label:"🚀 App",   url:"https://oshipay.me" },
+      { label:"GitHub",   url:"https://github.com/oyajibuki/OshiPay" },
       { label:"Supabase", url:"https://zjygwjymbtskirycwptb.supabase.co" },
     ],
     done:[
-      "Stripe決済フロー実装（Checkout → success → DB保存）",
-      "返信機能（reply）— クリエイターが絵文字＋テキストで返信",
-      "クリエイター・サポーターダッシュボード復元機能",
-      "Supabase移行・本番デプロイ完了",
-      "UI/UX 微修正・バグ対応（直近マイルストーン完了）",
-      "SNSバッジ整備（Facebook/LINE追加・グレーアイコン統一）",
-      "マイクロサイト導線完成（ランキング→MS・MS→応援ページ・返信DB↔MS/編集）",
-      "応援ページ: クリエイター写真表示 & URL短縮（?page=support&creator={slug}）",
-      "how-it-works.html: Step7更新・Step8（マイクロサイト）新規追加・Step9繰り下げ",
-      "返信ダッシュボード: ボタンスタイル統一（secondary・グレーアウトライン）",
-      "HEIC対応: resize-tool & ClearCut に heic2any 追加（Windows Chrome対応）",
-      "QR/サポートURL修正: BASE_URL trailing slash & oshipay.streamlit.app に修正",
-      "ランキング: display_name をDBから正しく取得・保存（表示名「ぎん」反映）",
-      "ランキング: クリエイターアイコン表示（photo_url 丸形アバター・プレースホルダー🎤）",
-      "Supabase RLS対応: service_roleキー移行・新規登録DB書き込み修正",
-      "無効クリエイターURL: 応援ページ遷移ブロック（エラーページ表示）",
-      "年輪コイン: サポーターダッシュボードに応援履歴コイン実装（ランク・刻印・返信表示）",
-      "how-it-works.html: Step9→Step8画像参照修正",
+      "Stripe Connect 決済実装（口座登録・Checkout・success・DB保存）",
+      "oshipay.me ドメイン取得・GitHub Pages 公開・HTTPS動作確認（O-1）",
+      "クリエイターマイクロサイト creator.html 公開（Supabase連携・ランキング）",
+      "サポーターアカウント機能（ログイン・マージ・クリエイター化対応）",
+      "OshiPay ブランディング統一（oshipay小文字・全HTMLライト/ダークモード対応）",
+      "LP / how-it-works / contact / en / creator.html ライト/ダークモード完全対応",
+      "メール送信 Resend API 移行（noreply@oshipay.me / DNS認証完了）（O-4）",
+      "72時間予約フロー完全実装①〜⑤（口座登録検知→一括メール→pay_pending→success更新→cron自動キャンセル）（O-6）",
+      "GitHub Actions cron 本番稼働（毎時実行・24時間前リマインド・自動キャンセル）",
+      "仮予約時 サポーター・クリエイター双方メール（クリエイター側はメッセージ内容を隠す）",
+      "payout_enabled カラム導入（Stripe途中離脱誤判定バグ修正）",
+      "supporter_accounts NOT NULL制約削除（ゲストログイン対応）",
+      "システム構成図作成（.private/system-diagram.html・Notion Private保管）",
+      "年輪コイン: サポーターダッシュボード応援履歴コイン実装",
       "QRメール送信ボタン & サポーター登録メール通知",
-      "プロフィールフォーム大改修（写真を丸枠最上部・SNS折りたたみ・QR保存後のみ・slug login・acct_idメール送信）",
-      "【設計完了】無課金遊べる設計: creator_id(UUID)主キー化・Stripe後払い・スタンプ機能・ランキング2軸・荒れ対策",
     ],
     wbs:[
       { id:"A", label:"A. 営業・普及活動（最優先）", prClass:"ph", prLabel:"🔴 高",
         tasks:[
-          { id:"O-1", name:"ランサーズ 営業プラン最終決定（3/17〆）", detail:"現在2万円で掲示板出稿中。①リストのみ50円/件×500件 vs ②リスト＆送信100円/件×200件 で検討中。②（200件）優勢。", pr:"high", st:"doing" },
-          { id:"O-2", name:"autoDM ツール活用（X・Instagram）", detail:"DM自動化ツール完成済み。200件プランと組み合わせて活用検討。BAN防止の待機時間・CSV管理実装済み。", pr:"high", st:"doing" },
-          { id:"O-3", name:"海外戦略（Stripe強み活用）", detail:"Stripe決済のため海外対応は強い。英語圏クリエイター向け営業・SNSアプローチを検討中。", pr:"mid", st:"todo" },
-          { id:"O-4", name:"SNSでのターゲット精査", detail:"OshiPayが刺さる層の洗い出しとアプローチ手法検討", pr:"high", st:"todo" },
-          { id:"O-5", name:"営業トークスクリプト作成", detail:"草の根営業用に伝わりやすい説明資料・スクリプトを準備", pr:"high", st:"todo" },
-          { id:"O-6", name:"利用者向けマニュアル作成", detail:"導入のハードルを下げるための使い方ガイド", pr:"mid", st:"todo" },
+              { id:"O-1", name:"oshipay.me ドメイン取得 & GitHub Pages 公開", detail:"HTTPS動作確認済み。LP・creator.html・how-it-works等を公開中。", pr:"high", st:"done" },
+          { id:"O-2", name:"autoDM ツール活用（X・Instagram）", detail:"DM自動化ツール完成済み。SNS営業200件と組み合わせて活用予定。", pr:"high", st:"todo" },
+          { id:"O-3", name:"海外戦略（Stripe強み活用）", detail:"Stripe決済のため海外対応は強い。英語圏VTuber・K-POP向け営業検討中。", pr:"mid", st:"todo" },
+          { id:"O-4", name:"Resend API 移行（noreply@oshipay.me）", detail:"DNS認証完了。全メール関数をResendに移行。月3,000通無料。", pr:"high", st:"done" },
+          { id:"O-5", name:"ピッチ資料 完成版（投資家・パートナー向け）", detail:"3/24〆。秋葉原・下北営業に向けて完成させる。", pr:"high", st:"doing" },
+          { id:"O-6", name:"72時間予約フロー 完全実装（①〜⑤）", detail:"口座未登録クリエイターへの応援を72時間保存→口座登録完了で自動メール→pay_pendingページ→success→cron自動キャンセル。", pr:"high", st:"done" },
+          { id:"O-7", name:"システム構成図 作成", detail:".private/system-diagram.html・Notion Private に保管。インフラ全体像を可視化。", pr:"mid", st:"done" },
         ]},
       { id:"B", label:"B. マイクロサイト（creator.html）", prClass:"ph", prLabel:"🔴 高",
         tasks:[
@@ -363,19 +358,22 @@ const D = {
 
   // ── フォーカス ──
   focus:[
-    "✅ 【3/19完了】プロフィールフォーム大改修（フィールド順・SNS折りたたみ・QR保存後のみ・slug login・メール送信）",
-    "🎯 【3/19設計完了】OshiPay 大型アーキテクチャ変更: 無課金でも遊べる設計・スタンプ機能・ランキング2軸",
-    "🚀 【3/20朝〜実装】creator_id(UUID)導入・stamps テーブル・メール+PW登録・ランキング2軸",
-    "🥔💈📱 プライベート: じゃがいも（3/20〜22）・床屋（3/22 18:00）・子供の携帯返却（3/22まで）",
+    "✅ 【3/23完了】72時間予約フロー完全実装（①〜⑤）・GitHub Actions cron 本番稼働",
+    "✅ 【3/23完了】Resend API 移行（noreply@oshipay.me）・DNS認証・全メール関数移行",
+    "✅ 【3/23完了】仮予約時 双方メール・クリエイター側メッセージ非表示",
+    "✅ 【3/23完了】システム構成図作成（.private/ & Notion Private）",
+    "🎯 【3/24〆】ピッチ資料 完成版（投資家・パートナー向け）",
+    "🏃 【3/25】秋葉原・下北沢 現地営業",
+    "📣 【3/31〆】SNS営業 200件 DM / こども携帯返却",
   ],
 
   // ── KPI ──
   kpi:[
-    { lbl:"OshiPay2 累計応援",   val:"テスト中", tgt:"初リリース達成" },
-    { lbl:"AutoCraft 月間売上",  val:"¥0",       tgt:"¥10,000/月" },
-    { lbl:"LINE 登録数",         val:"—",         tgt:"100 人" },
-    { lbl:"YouTube 再生数",      val:"—",         tgt:"1,000 回/月" },
-    { lbl:"無料ツール利用数",    val:"—",         tgt:"500 件/月" },
+    { lbl:"OshiPay 口座登録済み",  val:"13名",     tgt:"20名（3月末）" },
+    { lbl:"登録クリエイター数",    val:"確認中",   tgt:"50名（3月末）" },
+    { lbl:"メール基盤",            val:"✅ Resend", tgt:"安定稼働中" },
+    { lbl:"cronジョブ",            val:"✅ 毎時",   tgt:"GitHub Actions" },
+    { lbl:"AutoCraft 月間売上",    val:"¥0",       tgt:"¥10,000/月" },
   ]
 }
 
