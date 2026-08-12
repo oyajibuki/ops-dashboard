@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>短尺コンテンツ計画 — 断酒テーマ 45本（2026/08/18〜10/15）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:#4cd964; --accent:#00f2fe; --accent2:#4facfe;
+      --danger:#ff2d55; --warning:#ffcc00;
+      --card:rgba(255,255,255,0.06); --card-ft:rgba(79,172,254,0.07);
+      --border:rgba(255,255,255,0.12); --border-ft:rgba(79,172,254,0.4);
+      --text:#fff; --sub:#a0a0b0;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;padding:24px 16px 60px;font-family:'Inter','Noto Sans JP',sans-serif;
+      background:linear-gradient(135deg,#0a0c18,#14172a);color:var(--text);min-height:100vh}
+    .container{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+    .hd{text-align:center;padding:4px 0 8px}
+    h1{margin:0;font-size:1.7rem;background:linear-gradient(90deg,var(--accent2),var(--accent));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hd-sub{color:var(--sub);font-size:.84rem;margin-top:6px;line-height:1.6}
+    .back{display:inline-block;margin-top:10px;text-decoration:none;font-size:.75rem;color:var(--accent);
+      background:rgba(79,172,254,.14);border:1px solid rgba(79,172,254,.4);border-radius:7px;padding:5px 12px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px}
+    .card.ft{background:var(--card-ft);border-color:var(--border-ft);box-shadow:0 0 40px rgba(79,172,254,.08)}
+    h2{margin:0 0 14px;font-size:1.05rem;border-bottom:1px solid var(--border);padding-bottom:8px}
+    h3{margin:18px 0 8px;font-size:.8rem;color:var(--accent);letter-spacing:.6px;text-transform:uppercase}
+    p{font-size:.83rem;color:var(--sub);line-height:1.75;margin:0 0 10px}
+    b{color:var(--text)}
+    .verdict{background:rgba(76,217,100,.08);border:1px solid rgba(76,217,100,.35);border-radius:10px;
+      padding:14px 16px;font-size:.86rem;color:var(--sub);line-height:1.8}
+    .warn{background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.35);border-radius:10px;
+      padding:13px 16px;font-size:.81rem;color:var(--sub);line-height:1.75}
+    .danger{background:rgba(255,45,85,.08);border:1px solid rgba(255,45,85,.35);border-radius:10px;
+      padding:13px 16px;font-size:.81rem;color:var(--sub);line-height:1.75}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .box{border:1px solid var(--border);border-radius:10px;padding:14px 16px;background:rgba(255,255,255,.03)}
+    .box.good{border-color:rgba(76,217,100,.32);background:rgba(76,217,100,.05)}
+    .box.bad{border-color:rgba(255,45,85,.3);background:rgba(255,45,85,.05)}
+    .box-h{font-size:.86rem;font-weight:700;margin-bottom:8px}
+    .box ul{margin:0;padding-left:18px}
+    .box li{font-size:.78rem;color:var(--sub);line-height:1.7;padding:1px 0}
+
+    table{width:100%;border-collapse:collapse;font-size:.8rem}
+    .tw{overflow-x:auto}
+    th{text-align:left;font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.4px;
+      padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+    td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--sub);line-height:1.6;vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    .slot{color:var(--accent2);font-weight:700;white-space:nowrap}
+    .num{color:rgba(160,160,176,.55);font-size:.72rem;white-space:nowrap}
+
+    .wk{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+    .wk-hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+      padding:11px 16px;background:rgba(255,255,255,.04)}
+    .wk-t{font-size:.9rem;font-weight:700}
+    .wk-d{font-size:.72rem;color:var(--sub)}
+    .wk-tag{font-size:.66rem;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}
+    .tag-geo{background:rgba(0,242,254,.16);color:var(--accent)}
+    .tag-app{background:rgba(76,217,100,.16);color:var(--primary)}
+    .tag-risk{background:rgba(255,45,85,.16);color:var(--danger)}
+    .wk-body{padding:4px 16px 12px}
+    .vid{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .vid:last-child{border-bottom:none}
+    .vid-n{font-size:.68rem;color:rgba(160,160,176,.5);width:24px;flex-shrink:0;padding-top:3px}
+    .vid-s{font-size:.68rem;color:var(--accent2);font-weight:700;width:76px;flex-shrink:0;padding-top:2px}
+    .vid-b{flex:1;min-width:0}
+    .vid-t{font-size:.82rem;line-height:1.5;color:var(--text)}
+    .vid-m{font-size:.73rem;color:var(--sub);margin-top:2px;line-height:1.55}
+    .pill{display:inline-block;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:6px;
+      vertical-align:middle}
+    .p-geo{background:rgba(0,242,254,.16);color:var(--accent)}
+    .p-app{background:rgba(76,217,100,.16);color:var(--primary)}
+    .p-hit{background:rgba(255,204,0,.16);color:var(--warning)}
+
+    .kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+    .kv-i{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:9px;padding:11px 13px}
+    .kv-l{font-size:.71rem;color:var(--sub)}
+    .kv-v{font-size:1.05rem;font-weight:700;color:var(--accent);margin-top:3px}
+    .kv-s{font-size:.66rem;color:rgba(160,160,176,.55);margin-top:3px;line-height:1.5}
+    ol.steps{margin:0;padding-left:20px}
+    ol.steps li{font-size:.82rem;color:var(--sub);line-height:1.75;padding:3px 0}
+    @media(max-width:640px){
+      h1{font-size:1.3rem}.card{padding:16px 14px}.two{grid-template-columns:1fr}
+      .vid{flex-wrap:wrap}.vid-s{width:auto}
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hd">
+    <h1>短尺コンテンツ計画 — 断酒テーマ 45本</h1>
+    <div class="hd-sub">
+      ヒーローズスクール 履行条件（週5本 × 9週）＋ 10万再生チャレンジ用<br>
+      2026/08/18 〜 2026/10/15
+    </div>
+    <a class="back" href="./index.html">← OPS ダッシュボードに戻る</a>
+  </div>
+
+  <!-- 結論 -->
+  <div class="card ft">
+    <h2>✅ 結論</h2>
+    <div class="verdict">
+      <b>断酒テーマは「いける」。</b>短尺で最も伸びやすいジャンル構造を持っています。<br>
+      <b>ジオアラームは別テーマにせず、断酒の中の「道具」として登場させる。</b>
+      2テーマを1アカウントに混ぜると、アルゴリズムが視聴者を特定できず<b>両方伸びなくなる</b>のが短尺の性質です。
+      幸い、この2つには非常に相性の良い接点があります —
+      <b>「酒屋・コンビニ・居酒屋に近づいたら通知が出るようにジオアラームを仕込む」</b>。
+      これは断酒の実用ハックとして成立し、かつジオアラームの機能紹介そのものになります。
+    </div>
+    <div class="kv" style="margin-top:14px">
+      <div class="kv-i"><div class="kv-l">総本数</div><div class="kv-v">45本</div><div class="kv-s">週5本 × 9週</div></div>
+      <div class="kv-i"><div class="kv-l">メインテーマ</div><div class="kv-v">断酒</div><div class="kv-s">1アカウント1テーマ</div></div>
+      <div class="kv-i"><div class="kv-l">ジオアラーム露出</div><div class="kv-v">5本</div><div class="kv-s">断酒ハックとして自然に</div></div>
+      <div class="kv-i"><div class="kv-l">断酒クエスト露出</div><div class="kv-v">6本</div><div class="kv-s">全体の13%（宣伝色を抑える）</div></div>
+      <div class="kv-i"><div class="kv-l">純粋な価値提供</div><div class="kv-v">34本</div><div class="kv-s">76%。ここが伸びの本体</div></div>
+    </div>
+  </div>
+
+  <!-- なぜ断酒がいけるか -->
+  <div class="card">
+    <h2>📈 なぜ断酒が短尺に向いているか / 向いていない点</h2>
+    <div class="two">
+      <div class="box good">
+        <div class="box-h">✅ 向いている理由</div>
+        <ul>
+          <li><b>当事者コミュニティが濃い</b>。悩んでいる人が自分から探しに来るテーマなので、保存・コメント率が高く、アルゴリズムに評価されやすい</li>
+          <li><b>変化が数字とビジュアルで出る</b>（日数・体重・顔・睡眠・酒代）。before/after は短尺で最強のフォーマット</li>
+          <li><b>ネタが自動供給される</b>。毎日が素材なので、9週間のネタ切れが構造的に起きない</li>
+          <li><b>「当事者かつアプリ開発者」は珍しい</b>。単なる体験談アカウントと差別化できる</li>
+          <li><b>製品を置く場所が自然にある</b>。記録アプリは断酒の文脈で必然性があり、宣伝に見えにくい</li>
+        </ul>
+      </div>
+      <div class="box bad">
+        <div class="box-h">⚠️ 向いていない・注意点</div>
+        <ul>
+          <li><b>個人開示が前提</b>。顔出しするか、手元・画面・字幕のみで通すかを初日に決める必要がある</li>
+          <li><b>医療に接する領域</b>。アルコール依存症は治療対象。「これで治る」系の断定は絶対に避ける（下の注意事項を参照）</li>
+          <li><b>共感 &gt; 情報</b>の設計が必要。情報だけ並べると保存はされても再生が伸びない</li>
+          <li>ご自身が当事者でない場合、この構成は弱くなる。→ 下の「当事者でない場合」を参照</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- プラットフォーム -->
+  <div class="card">
+    <h2>📱 プラットフォーム選定（3択の答え）</h2>
+    <p><b>本命は TikTok。</b>理由は1つで、<b>フォロワー0からでも再生が出る</b>のは3つの中で TikTok が最も強いからです。
+      10万再生という絶対量を9週で取りに行くなら、既存フォロワーに依存しない配信力が最重要になります。</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>プラットフォーム</th><th>10万再生の取りやすさ</th><th>アプリ送客</th><th>判定</th></tr></thead>
+        <tbody>
+          <tr><td><b>TikTok</b></td><td>◎ フォロワー0でも回る。断酒系の当事者コミュニティが活発</td><td>△ プロフィールリンク1本のみ</td><td><b style="color:var(--primary)">本命</b></td></tr>
+          <tr><td>Instagram リール</td><td>△ 伸びは遅いが、保存・DMで関係が濃くなる</td><td>○ プロフィール＋ストーリーズ</td><td>二次投稿</td></tr>
+          <tr><td>YouTube ショート</td><td>○ 回るが競合が強い</td><td>◎ 概要欄・固定コメントにリンク可</td><td>二次投稿</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn" style="margin-top:14px">
+      💡 <b>同じ縦動画を3つに横展開する（工数ほぼゼロ）。</b>
+      ただし <b>学校の「週5本」がどのプラットフォームでカウントされるのか、8/15 に必ず確認</b>。
+      「1本を3箇所に上げて3本扱い」なのか「別々に5本必要」なのかで稼働が3倍変わります。
+    </div>
+  </div>
+
+  <!-- 5枠固定 -->
+  <div class="card">
+    <h2>🗓 週5本を9週続けるための「5枠固定」方式</h2>
+    <p>毎回ゼロから企画を考える運用は<b>9週間もちません</b>。曜日ごとに<b>フォーマットを固定</b>し、
+      中身だけ差し替える方式にします。これで「今日何を撮るか」を考える時間がゼロになります。</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>曜日</th><th>枠</th><th>役割</th><th>作り方</th></tr></thead>
+        <tbody>
+          <tr><td class="slot">月</td><td><b>記録</b></td><td>継続の証明・固定客の習慣化</td><td>「断酒○日目」＋その日の数字1つ。最も作るのが楽な枠</td></tr>
+          <tr><td class="slot">火</td><td><b>あるある / 失敗談</b></td><td><b>伸びの主砲</b>。共感で拡散する枠</td><td>「〜な人いる?」「〜しちゃった話」。1本のヒットはここから出る</td></tr>
+          <tr><td class="slot">水</td><td><b>対処ハック</b></td><td>保存される枠。実用価値</td><td>やり方を30秒で1つ。<b>ジオアラーム・断酒クエストを置く枠</b></td></tr>
+          <tr><td class="slot">木</td><td><b>変化 / before after</b></td><td>説得力・信頼の蓄積</td><td>数字か見た目の変化を1つ。写真・スクショで可</td></tr>
+          <tr><td class="slot">金</td><td><b>Q&amp;A / コメント返し</b></td><td>コミュニティ化・ネタの自動供給</td><td>コメントを読むだけで企画が湧く。<b>ネタ切れの保険</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn" style="margin-top:14px">
+      🎬 <b>撮影は週末まとめ撮り。</b>日曜に5本撮って予約投稿。平日は投稿作業ゼロにする。
+      これができるかで9週間の完走率が決まります（撮り溜め・予約投稿の可否も 8/15 に確認）。
+    </div>
+  </div>
+
+  <!-- 45本 -->
+  <div class="card">
+    <h2>📋 9週 × 5本 = 45本 具体テーマ</h2>
+    <p>週ごとに<b>大テーマ</b>を置き、5枠に流し込む構成です。
+      <span class="pill p-geo">GEO</span>＝ジオアラーム登場、
+      <span class="pill p-app">APP</span>＝断酒クエスト登場、
+      <span class="pill p-hit">HIT</span>＝最も伸びが期待できる本。</p>
+
+    <!-- W1 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 1 — なぜ始めたか（導入）</div><div class="wk-d">8/18 〜 8/22</div></div>
+        <span class="wk-tag tag-app">APP 初登場</span>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">01</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。始めた理由を30秒で話す</div><div class="vid-m">最初の1本。カウントの起点を明示すると「続きが見たい」動機になる</div></div></div>
+        <div class="vid"><div class="vid-n">02</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">酒で失った一番大きいもの<span class="pill p-hit">HIT</span></div><div class="vid-m">感情の入口。ここで刺さると以降の再生が全部伸びる。誇張せず具体で1つ</div></div></div>
+        <div class="vid"><div class="vid-n">03</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">断酒初日にやった3つの準備</div><div class="vid-m">家の酒を処分 / 飲む予定を先に消す / 代替ドリンクを買っておく</div></div></div>
+        <div class="vid"><div class="vid-n">04</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">断酒前の自分のスペックを全部出す</div><div class="vid-m">体重・睡眠時間・月の酒代。<b>ここが後半のbefore/afterの基準線になる</b>ので必ず撮る</div></div></div>
+        <div class="vid"><div class="vid-n">05</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">アプリ開発者が断酒アプリを自分用に作った話<span class="pill p-app">APP</span></div><div class="vid-m">宣伝ではなく「自分が困って作った」動機として出す。差別化の核</div></div></div>
+      </div>
+    </div>
+
+    <!-- W2 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 2 — 最初の1週間の壁</div><div class="wk-d">8/25 〜 8/29</div></div>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">06</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。今日の睡眠時間</div></div></div>
+        <div class="vid"><div class="vid-n">07</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">3日目が一番きつい、という話<span class="pill p-hit">HIT</span></div><div class="vid-m">「何日目がきついか」は当事者が最も検索する話題</div></div></div>
+        <div class="vid"><div class="vid-n">08</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">飲みたくなった瞬間にやる「5分だけ待つ」</div><div class="vid-m">衝動は波であって持続しない、という体感を自分の言葉で</div></div></div>
+        <div class="vid"><div class="vid-n">09</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">1週間で最初に変わったのは睡眠だった</div></div></div>
+        <div class="vid"><div class="vid-n">10</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">よく聞かれる質問①「付き合いはどうするの?」</div></div></div>
+      </div>
+    </div>
+
+    <!-- W3 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 3 — 体の変化</div><div class="wk-d">9/1 〜 9/5</div></div>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">11</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。体重の推移</div></div></div>
+        <div class="vid"><div class="vid-n">12</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">断酒すると「ノンアル売り場」に異常に詳しくなる</div><div class="vid-m">軽い笑いの枠。重い話ばかりだと視聴者が離れるので必ず混ぜる</div></div></div>
+        <div class="vid"><div class="vid-n">13</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">寝酒の代わりに今やっていること</div></div></div>
+        <div class="vid"><div class="vid-n">14</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">顔の変化 before / after<span class="pill p-hit">HIT</span></div><div class="vid-m">視覚的証拠は短尺で最強。W1の写真と並べる</div></div></div>
+        <div class="vid"><div class="vid-n">15</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">コメント返し：健康診断の数値はどうなった?</div><div class="vid-m">自分の結果を「私の場合」として出す。一般化しない</div></div></div>
+      </div>
+    </div>
+
+    <!-- W4 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 4 — お金</div><div class="wk-d">9/8 〜 9/12</div></div>
+        <span class="wk-tag tag-app">APP</span>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">16</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。浮いた酒代の累計</div></div></div>
+        <div class="vid"><div class="vid-n">17</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">1年分の酒代を計算したら○万円だった<span class="pill p-hit">HIT</span></div><div class="vid-m">金額は最も拡散する。断酒に興味がない層にも届く数字系</div></div></div>
+        <div class="vid"><div class="vid-n">18</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">浮いた金の使い道を「先に」決めておく</div></div></div>
+        <div class="vid"><div class="vid-n">19</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">1ヶ月の家計 before / after</div></div></div>
+        <div class="vid"><div class="vid-n">20</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">節約額が自動で見える化される仕組みを見せる<span class="pill p-app">APP</span></div><div class="vid-m">画面録画で30秒。「数字が見えると続く」という文脈で自然に出せる</div></div></div>
+      </div>
+    </div>
+
+    <!-- W5 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 5 — 人付き合い・飲み会</div><div class="wk-d">9/15 〜 9/19</div></div>
+        <span class="wk-tag tag-geo">GEO</span>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">21</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。今週は飲み会があった</div></div></div>
+        <div class="vid"><div class="vid-n">22</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">「なんで飲まないの?」と聞かれた時の空気<span class="pill p-hit">HIT</span></div><div class="vid-m">当事者の共感度が最も高い場面。ここは実体験の再現で</div></div></div>
+        <div class="vid"><div class="vid-n">23</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">飲み会を乗り切る3手（先に注文 / 運転役 / 2次会前に帰る）</div></div></div>
+        <div class="vid"><div class="vid-n">24</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">断酒して人間関係はどう変わったか（良い面も悪い面も）</div></div></div>
+        <div class="vid"><div class="vid-n">25</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">帰り道の「1杯だけ」を防ぐために仕込んだ通知<span class="pill p-geo">GEO</span></div><div class="vid-m">ジオアラームの初登場。飲み会の文脈だと必然性が最も高い</div></div></div>
+      </div>
+    </div>
+
+    <!-- W6 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 6 — メンタル・ストレス</div><div class="wk-d">9/22 〜 9/26</div></div>
+        <span class="wk-tag tag-risk">⚠️ 離脱危険週</span>
+      </div>
+      <div class="wk-body">
+        <div class="danger" style="margin:8px 0 10px">
+          ⚠️ <b>統計的にここで折れます。</b>慣れて飽き、ネタが尽き、伸びも停滞する週。
+          <b>この5本だけは8月中に撮り溜めておくこと。</b>ここで週5本が途切れると、
+          10万再生に届かなくても無料解約の条件を満たせなくなる恐れがあります。
+        </div>
+        <div class="vid"><div class="vid-n">26</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。正直、今週はしんどい</div></div></div>
+        <div class="vid"><div class="vid-n">27</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">ストレスで「今日だけは」と思う夜の話<span class="pill p-hit">HIT</span></div></div></div>
+        <div class="vid"><div class="vid-n">28</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">イライラした時の代替行動リスト（自分用）</div></div></div>
+        <div class="vid"><div class="vid-n">29</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">メンタルの変化を正直に（良くなった点・逆にきつい点）</div><div class="vid-m">良い面だけ言うと嘘っぽくなる。ネガも出す方が信頼される</div></div></div>
+        <div class="vid"><div class="vid-n">30</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">「やめて楽しみが無くなった」への自分の答え</div></div></div>
+      </div>
+    </div>
+
+    <!-- W7 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 7 — 意志ではなく仕組みで続ける</div><div class="wk-d">9/29 〜 10/3</div></div>
+        <span class="wk-tag tag-geo">GEO 主役週</span>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">31</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。続いている理由は根性ではない</div></div></div>
+        <div class="vid"><div class="vid-n">32</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">意志で我慢するのをやめたら続いた話<span class="pill p-hit">HIT</span></div><div class="vid-m">週の主張を先に立てる。次の3本の前振りになる</div></div></div>
+        <div class="vid"><div class="vid-n">33</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">コンビニと居酒屋に「近づいたら通知」を仕込んだ<span class="pill p-geo">GEO</span><span class="pill p-hit">HIT</span></div><div class="vid-m"><b>この計画の中心的な1本。</b>位置情報アラームを再発防止に使う発想は目新しく、実用性も高い</div></div></div>
+        <div class="vid"><div class="vid-n">34</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">設定を画面で見せる（30秒・手順だけ）<span class="pill p-geo">GEO</span></div><div class="vid-m">33本目が伸びた場合の受け皿。「やり方教えて」に先回りして答える</div></div></div>
+        <div class="vid"><div class="vid-n">35</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">記録アプリ＋位置通知の2つで支える仕組み<span class="pill p-geo">GEO</span><span class="pill p-app">APP</span></div><div class="vid-m">2アプリ同時に出せる唯一の自然な文脈</div></div></div>
+      </div>
+    </div>
+
+    <!-- W8 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 8 — 失敗と再開</div><div class="wk-d">10/6 〜 10/10</div></div>
+        <span class="wk-tag tag-app">APP</span>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">36</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。ここまでの通算</div></div></div>
+        <div class="vid"><div class="vid-n">37</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">実は1回飲んでしまった日の話<span class="pill p-hit">HIT</span></div><div class="vid-m"><b>正直枠は最も伸びる。</b>失敗を隠さないアカウントに人は残る。※実際に無い場合は作らない（後述）</div></div></div>
+        <div class="vid"><div class="vid-n">38</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">1回失敗しても「ゼロに戻さない」考え方</div></div></div>
+        <div class="vid"><div class="vid-n">39</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">連続日数が途切れても続く記録の付け方<span class="pill p-app">APP</span></div></div></div>
+        <div class="vid"><div class="vid-n">40</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">「失敗したらやり直し?」への答え</div></div></div>
+      </div>
+    </div>
+
+    <!-- W9 -->
+    <div class="wk">
+      <div class="wk-hd">
+        <div><div class="wk-t">Week 9 — 総括（10/15 判定週）</div><div class="wk-d">10/13 〜 10/15</div></div>
+        <span class="wk-tag tag-app">APP</span>
+      </div>
+      <div class="wk-body">
+        <div class="vid"><div class="vid-n">41</div><div class="vid-s">月・記録</div><div class="vid-b"><div class="vid-t">断酒○日目。2ヶ月続いた</div></div></div>
+        <div class="vid"><div class="vid-n">42</div><div class="vid-s">火・あるある</div><div class="vid-b"><div class="vid-t">2ヶ月で一番効いた対策 TOP3<span class="pill p-hit">HIT</span></div><div class="vid-m">まとめ系は保存されやすい。伸び直しの最後のチャンス</div></div></div>
+        <div class="vid"><div class="vid-n">43</div><div class="vid-s">水・ハック</div><div class="vid-b"><div class="vid-t">これから断酒する人に渡したいチェックリスト<span class="pill p-app">APP</span></div></div></div>
+        <div class="vid"><div class="vid-n">44</div><div class="vid-s">木・変化</div><div class="vid-b"><div class="vid-t">2ヶ月の変化まとめ・数字を全部出す<span class="pill p-hit">HIT</span></div><div class="vid-m">W1の04本目と完全に対応させる。最も説得力が出る1本</div></div></div>
+        <div class="vid"><div class="vid-n">45</div><div class="vid-s">金・Q&amp;A</div><div class="vid-b"><div class="vid-t">ここまで見てくれた人へ / 次にやること</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ジオアラーム -->
+  <div class="card">
+    <h2>📍 ジオアラームの扱い（なぜ別テーマにしないか）</h2>
+    <div class="two">
+      <div class="box bad">
+        <div class="box-h">❌ 2テーマを1アカウントに混ぜる</div>
+        <ul>
+          <li>短尺のレコメンドは<b>アカウント単位でテーマを学習</b>する。断酒とライフハックが混ざると視聴者像が定まらず、<b>両方の配信が落ちる</b></li>
+          <li>断酒で来た人はジオアラーム動画をスキップし、逆も同じ。<b>視聴完了率が下がる＝全体が沈む</b></li>
+          <li>9週で10万再生という制約下では、この分散は致命的</li>
+        </ul>
+      </div>
+      <div class="box good">
+        <div class="box-h">✅ 断酒の中の「道具」として出す</div>
+        <ul>
+          <li><b>酒屋・コンビニ・居酒屋に近づいたら通知</b>＝再発防止ハックとして成立。これは断酒コンテンツとして自然</li>
+          <li>ジオアラームを知らない層に<b>「そんな使い方があるのか」</b>と刺さる。機能紹介より強い</li>
+          <li>45本中5本（11%）に抑える。テーマの一貫性を壊さない量</li>
+        </ul>
+      </div>
+    </div>
+    <h3>ジオアラーム単体はどう伸ばすか</h3>
+    <p><b>短尺ではなく ASO で取る。</b>「場所 リマインダー」「乗り過ごし 防止」等のキーワードは検索意図が明確で、
+      短尺のバズより<b>安く・継続的に</b>効きます。10/15 までの短尺枠は断酒に全振りし、
+      ジオアラームは <b>ASO＋Android版公開</b>で伸ばすのが役割分担として正しい配分です。
+      <b>ジオアラーム専用アカウントを作るのは 10/15 以降</b>に判断してください。</p>
+  </div>
+
+  <!-- 注意事項 -->
+  <div class="card">
+    <h2>⚠️ 発信時の注意（守らないと逆リスクになる）</h2>
+    <div class="danger">
+      <b>アルコール依存は医療の領域です。</b>以下は必ず守ってください。発信者としての安全と、
+      アカウント凍結リスクの回避の両方に関わります。
+      <ol class="steps" style="margin-top:8px">
+        <li><b>「これで治る」「病院は不要」は絶対に言わない。</b>語るのは<b>自分の記録に限定</b>し、「私の場合は」を必ず付ける</li>
+        <li><b>健康効果を一般化しない。</b>数値が改善しても「断酒すれば誰でもこうなる」とは言わない</li>
+        <li><b>深刻な相談コメントには専門機関を案内する。</b>自分で治療的アドバイスをしない。定型文を用意しておく</li>
+        <li><b>飲酒を煽る・美化する表現を使わない</b>（プラットフォームのポリシー違反になり得る）</li>
+        <li><b>体験していないことを作らない。</b>特に37本目の「飲んでしまった話」は、実際に無ければ撮らないこと。<b>嘘は当事者コミュニティで最も早くバレ、信頼を一度で失います</b></li>
+      </ol>
+    </div>
+    <h3>ご自身が断酒当事者でない場合</h3>
+    <p>この45本は<b>当事者としての一次体験</b>を前提に組んでいます。当事者でない場合、記録枠・変化枠が成立しません。
+      その場合は次のいずれかに切り替えてください。<br>
+      ① <b>「断酒アプリを作っている開発者」視点</b>（ユーザーの声・機能開発の裏側・データから見えた傾向）<br>
+      ② <b>今日から自分で断酒を始めて当事者になる</b>（W1の01本目が起点になり、この計画がそのまま使える）<br>
+      ③ テーマを自分の一次体験がある領域に変える（この場合、断酒クエストとの接続は弱くなる）<br>
+      <b>①は成立しますが、②の方が圧倒的に伸びます。</b>短尺は「変化の実況」に最も強いためです。</p>
+  </div>
+
+  <!-- 初週にやること -->
+  <div class="card ft">
+    <h2>🚀 最初の1週間でやること（8/13〜8/17）</h2>
+    <ol class="steps">
+      <li><b>8/15 ガイダンスで4点確認：</b>①週5本のカウント方法（複数プラットフォームで重複可か）②撮り溜め・予約投稿の可否 ③1回落とした時の扱い ④講座動画の総本数と視聴期限</li>
+      <li><b>アカウントを作る（TikTok）。</b>プロフィールに断酒クエストへのリンクを設置 — <b>これが唯一の送客導線</b></li>
+      <li><b>計測導線を先に作る。</b>プロフィールのリンクを計測可能な形にする。<b>1本目を投稿する前に終わらせること。</b>これが無いと10/15に「再生は出たが売上に繋がったか不明」で判断材料が消えます</li>
+      <li><b>W1の基準線を撮る（04本目）。</b>体重・睡眠・酒代の「今」を記録。<b>後半のbefore/afterは今日撮らないと二度と撮れません</b></li>
+      <li><b>顔出しするかを決める。</b>手元・画面・字幕のみでも成立します。途中で変えると視聴者が離れるので初日に決める</li>
+      <li><b>W6の5本を先に撮り溜める。</b>9月下旬に折れる前提で、8月の元気なうちに保険を作る</li>
+    </ol>
+  </div>
+
+  <div style="text-align:center;padding:10px 0 0">
+    <a class="back" href="./index.html">← OPS ダッシュボードに戻る</a>
+  </div>
+
+</div>
+</body>
+</html>
