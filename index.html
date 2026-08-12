@@ -216,6 +216,21 @@
     .oq-stance { font-size: .78rem; color: var(--sub); line-height: 1.65; margin-top: 4px; padding-left: 16px;
       border-left: 2px solid rgba(79,172,254,.3); }
 
+    /* Heroes requirements */
+    .hr-warn { background: rgba(255,204,0,.08); border: 1px solid rgba(255,204,0,.32); border-radius: 10px;
+      padding: 12px 15px; font-size: .81rem; color: var(--sub); line-height: 1.7; margin-bottom: 14px; }
+    .hr-warn b, .hr-verdict b, .hr-risk b { color: var(--text); }
+    .hr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+    .hr-item { border: 1px solid rgba(255,45,85,.28); background: rgba(255,45,85,.05);
+      border-radius: 10px; padding: 13px 15px; }
+    .hr-hd { display: flex; align-items: center; gap: 8px; font-size: .87rem; font-weight: 700; }
+    .hr-rule { font-size: .78rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
+    .hr-total { font-size: .8rem; color: var(--sub); margin-top: 4px; }
+    .hr-risk { font-size: .73rem; color: rgba(160,160,176,.75); line-height: 1.6; margin-top: 7px;
+      padding-top: 7px; border-top: 1px solid rgba(255,255,255,.07); }
+    .hr-verdict { margin-top: 14px; background: rgba(76,217,100,.07); border: 1px solid rgba(76,217,100,.32);
+      border-radius: 10px; padding: 13px 16px; font-size: .82rem; color: var(--sub); line-height: 1.75; }
+
     /* SNS baseline */
     .sns-baseline { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .5px;
       background: rgba(255,204,0,.14); color: var(--warning); border: 1px solid rgba(255,204,0,.35);
@@ -321,7 +336,7 @@ const D = {
   // ── ブロッカー（最優先・終わるまで他作業NG）──
   blockers: [
     { label:"ヒーローズスクール — 10万再生 チャレンジ",
-      note:"<b>契約条件：10/15 までに講座動画を視聴し、短尺（TikTok / YouTubeショート / Instagram のいずれか）で 10万再生に達しなければ無料解約可。達すれば 80万円を払って継続。</b><br>⚠️ <b>無料解約の権利は「動画を全部見た」ことが条件</b>。視聴をサボると解約条件を満たせず 80万円の支払い義務が残る恐れがある。<b>視聴は任意ではなく、撤退オプションの購入代金</b>と考えること。8/14 カード会社 / 8/15 ガイダンスで<b>解約条件の正確な文言を書面で確認</b>する。",
+      note:"<b>10/15 までに下記を全て履行し、それでも短尺（TikTok / YouTubeショート / Instagram）で 10万再生に届かなければ無料解約。届けば 80万円を払って継続。</b><br>　① 講座動画の視聴　② <b>週5本・30秒以上の動画アップロード</b>　③ <b>週1回の講習会 参加</b><br>⚠️ <b>これらは「宿題」ではなく、無料解約オプションの購入代金</b>。1つでも履行が途切れると、10万再生に届かなくても 80万円の支払い義務が残る恐れがある。8/14 カード会社 / 8/15 ガイダンスで<b>「未達の定義」「1回休んだらどうなるか」を書面で確認</b>すること。",
       deadline:"2026-10-15" },
   ],
 
@@ -335,8 +350,9 @@ const D = {
     { date:"2026-08-15", label:"📝 ランサーズ アンケート案件① 09:00", proj:"other", pr:"high" },
     { date:"2026-08-31", label:"🤖 断酒クエスト Android版 公開", proj:"android", pr:"high" },
     { date:"2026-08-31", label:"🤖 ジオアラーム Android版 公開", proj:"android", pr:"high" },
-    { date:"2026-08-31", label:"📺 講座動画 視聴 1/3 完了（解約条件の履行）", proj:"sns", pr:"high" },
-    { date:"2026-09-15", label:"📊 中間レビュー（再生数の伸び＋視聴 2/3 完了）", proj:"sns", pr:"high" },
+    { date:"2026-08-18", label:"🎬 動画 週5本 運用スタート（撮り溜め体制を確立）", proj:"sns", pr:"high" },
+    { date:"2026-08-31", label:"📺 視聴1/3完了・動画 累計15本（解約条件の履行）", proj:"sns", pr:"high" },
+    { date:"2026-09-15", label:"📊 中間レビュー（累計30本・再生数の伸び・視聴2/3）", proj:"sns", pr:"high" },
     { date:"2026-10-10", label:"📺 講座動画 全視聴 完了 ← 無料解約の必須条件", proj:"sns", pr:"high" },
     { date:"2026-09-30", label:"📝 ランサーズ アンケート案件 3件 完了", proj:"other", pr:"mid" },
     { date:"2026-10-15", label:"⚖️ 10万再生 判定 → 継続(¥800,000) or 無料解約", proj:"sns", pr:"high" },
@@ -390,6 +406,9 @@ const D = {
           { id:"S-7", name:"マネージャーへの評価依頼（本来の入会目的）", detail:"入会の本質的な狙いは第三者評価。<b>ガイダンス時点で「誰が・どの頻度で・何を見てくれるのか」を確認する。</b>ここが曖昧なら 80万円の根拠が消える。", pr:"high", st:"todo" },
           { id:"S-4", name:"アプリ発信用アカウントの設計", detail:"個人 / 断酒 / ジオアラーム のアカウント設計。キャラを分けるか一本化するかを最初に決める。", pr:"high", st:"todo" },
           { id:"S-5", name:"9/15 中間レビュー", detail:"ここで手応えゼロなら 10/15 は撤退寄り。1ヶ月前に仮判断しておく。", pr:"mid", st:"todo" },
+          { id:"S-11", name:"週5本 × 30秒以上の動画アップロード（必須条件）", detail:"<b>10/15まで累計 約46本。</b>この2ヶ月の最大の稼働。<b>撮り溜め・使い回しの可否をガイダンスで確認し、週末にまとめ撮りする運用を最初に固める。</b>毎日その場で考えて撮る運用は9週間もたない。", pr:"high", st:"todo" },
+          { id:"S-12", name:"週1回の講習会 参加（必須条件）", detail:"<b>10/15まで 約9回。</b>曜日・時間を確認し、ランサーズ案件や家庭の予定と衝突しないかを先に潰す。<b>欠席時の扱い（振替可否・条件未達になるか）を必ず確認。</b>", pr:"high", st:"todo" },
+          { id:"S-13", name:"46本のテーマを「断酒」に固定する", detail:"<b>この2ヶ月で唯一の勝ち筋。</b>学校の条件（週5本）と、断酒クエストの集客を<b>同じ作業に重ねる</b>。バズ狙いの無関係コンテンツで46本作ると、10/15 に「疲弊しただけ・売上ゼロ」で終わる。断酒は当事者コミュニティが濃く、短尺（記録・before/after・失敗談）と相性が良い。", pr:"high", st:"todo" },
           { id:"S-8", name:"講座動画の視聴（＝無料解約の必須条件）", detail:"<b>これをサボると 80万円の支払い義務が残る</b>。総本数と期限を初日に確認し、週あたりの必要視聴本数を逆算してカレンダーに固定する。8/31=1/3、9/15=2/3、10/10=完了 のチェックポイントで管理。", pr:"high", st:"todo" },
           { id:"S-9", name:"10万再生チャレンジ — プラットフォーム選定", detail:"<b>TikTok / YouTubeショート / Instagram の3択から1つに絞る（8/15確定）。</b>3つ同時は分散して届かない。判断軸は「断酒・ジオアラームのターゲットがいる場所」。断酒＝当事者コミュニティが濃い、ジオアラーム＝汎用ライフハック系、と客層が違う点に注意。", pr:"high", st:"todo" },
           { id:"S-10", name:"10万再生チャレンジ — 企画をアプリと接続する", detail:"<b>短尺は再生数を稼ぎやすいがアプリDLに繋がりにくい。</b>バズ狙いの無関係コンテンツで10万を取っても、10/15 に「数字は出たが売上ゼロ」で終わる。<b>断酒・ジオアラームのテーマと重なる企画に限定し、プロフィール導線を必ず設置する。</b>", pr:"high", st:"todo" },
@@ -413,6 +432,24 @@ const D = {
           { id:"H-2", name:"ゲーム開発への参入", detail:"興味あり。ただし 10/15 の判断以降に持ち越し。今はアイデアメモのみ。", pr:"low", st:"future" },
         ]},
     ]
+  },
+
+  // ── ヒーローズスクール 履行条件（無料解約の必須要件）──
+  heroes: {
+    deadline:"2026-10-15",
+    weeks:9.1,
+    warn:"下記は「頑張る目標」ではなく <b>無料解約の権利を維持するための必須条件</b>。履行が途切れた瞬間に、80万円が「選べる支出」から「避けられない支出」に変わる可能性がある。<b>まずこの稼働量が現実に入るかを見てから、他の予定を組むこと。</b>",
+    reqs:[
+      { icon:"🎬", label:"動画アップロード", rule:"週5本 × 30秒以上",
+        total:"10/15まで 累計 <b>約46本</b>", risk:"最大の稼働。1本30分で作れても週2.5時間、企画込みなら週5〜8時間" },
+      { icon:"🏫", label:"講習会 参加", rule:"週1回",
+        total:"10/15まで <b>約9回</b>", risk:"日時固定。ランサーズ・家庭の予定と衝突しないか先に確認" },
+      { icon:"📺", label:"講座動画 視聴", rule:"期限内に完了",
+        total:"総本数は <b>8/15 に要確認</b>", risk:"本数不明のまま走ると終盤に詰む。初日に総量を確認" },
+      { icon:"🎯", label:"再生数（判定指標）", rule:"短尺 10万再生",
+        total:"現在 <b>0 / 100,000</b>", risk:"達成＝80万円支払い。未達＝無料解約。<b>皮肉だが「達成すると出費が発生する」構造</b>" },
+    ],
+    verdict:"<b>週5本の動画が、この2ヶ月の最大の制約条件。</b>Android2本・ASO・ランサーズ3件と同時には回らない。<b>動画のテーマを「断酒」に固定すれば、この46本はそのまま断酒クエストの見込み客リストになる</b> — 学校の条件を満たす作業と、キラーアプリを売る作業を <b>1本の作業に重ねられるかどうか</b>が、この2ヶ月の成否を分ける。",
   },
 
   // ── SNS 現況（10/15 判断のベースライン）──
@@ -563,7 +600,9 @@ const D = {
     "✅ 【8/12完了】SNS ベースライン取得（note 562 / X 540 / 売上¥0）",
     "💳 【8/14】カード会社と協議 — 撤退時にコストが出ないことを必ず確認",
     "🎓 【8/15】入学ガイダンス — 講座動画の総本数・視聴期限・解約条件の文言を確認",
-    "📺 【継続】講座動画の視聴は「無料解約オプションの代金」。サボると80万の支払い義務が残る",
+    "🎬 【最大の制約】週5本×30秒以上の動画 ＝ 10/15まで累計約46本。週1回の講習会も必須",
+    "🎯 【勝ち筋】その46本を全て「断酒」テーマに固定 → 学校の条件履行と断酒クエスト集客を1本化する",
+    "📺 【継続】視聴・週5投稿・週1参加は「無料解約オプションの代金」。途切れると80万の支払い義務が残る",
     "📝 【8/15 09:00】ランサーズ アンケート案件①",
     "📦 【8/13】Android 実機到着 → 署名鍵作成・実機デバッグ環境構築",
     "🤖 【8月末〆】断酒クエスト・ジオアラーム の Android 版 公開",
@@ -584,6 +623,8 @@ const D = {
     { lbl:"ランサーズ 受注",       val:"3件",        tgt:"9月末までに完了" },
     { lbl:"月次固定費",            val:"要棚卸し",   tgt:"上限を決めて売上と連動" },
     { lbl:"短尺 再生数",           val:"0 / 100,000", tgt:"TikTok/YTショート/IG から1つ選定" },
+    { lbl:"動画アップ 累計",       val:"0 / 46本",   tgt:"週5本×30秒以上（必須条件）" },
+    { lbl:"講習会 参加",           val:"0 / 9回",    tgt:"週1回（必須条件）" },
     { lbl:"講座動画 視聴進捗",     val:"0%",         tgt:"10/10 までに100%（無料解約の条件）" },
     { lbl:"ヒーローズ判断まで",    val:"10/15",      tgt:"10万到達=¥800,000 / 未達=¥0" },
   ]
@@ -843,6 +884,24 @@ m.wbs.forEach((ep,ei) => {
   h += `</div></div>`
 })
 h += `</div>` // end featured
+
+/* ── Heroes requirements ── */
+if (D.heroes) {
+  const hs = D.heroes
+  h += `<div class="card">
+    <h2>📋 ヒーローズスクール — 無料解約の必須条件</h2>
+    <div class="hr-warn">⚠️ ${hs.warn}</div>
+    <div class="hr-grid">`
+  hs.reqs.forEach(r => h += `<div class="hr-item">
+    <div class="hr-hd"><span>${r.icon}</span>${r.label}</div>
+    <div class="hr-rule">${r.rule}</div>
+    <div class="hr-total">${r.total}</div>
+    <div class="hr-risk">${r.risk}</div>
+  </div>`)
+  h += `</div>
+    <div class="hr-verdict">💡 ${hs.verdict}</div>
+  </div>`
+}
 
 /* ── SNS baseline ── */
 if (D.sns) {
