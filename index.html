@@ -216,6 +216,28 @@
     .oq-stance { font-size: .78rem; color: var(--sub); line-height: 1.65; margin-top: 4px; padding-left: 16px;
       border-left: 2px solid rgba(79,172,254,.3); }
 
+    /* SNS baseline */
+    .sns-baseline { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .5px;
+      background: rgba(255,204,0,.14); color: var(--warning); border: 1px solid rgba(255,204,0,.35);
+      border-radius: 20px; padding: 4px 12px; margin-bottom: 10px; }
+    .sns-note { font-size: .8rem; color: var(--sub); line-height: 1.7; margin-bottom: 14px; }
+    .sns-note b, .sns-memo b, .sns-verdict b { color: var(--text); }
+    .sns-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+    .sns-acc { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;
+      background: rgba(255,255,255,.03); }
+    .sns-acc-hd { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .sns-acc-name { font-size: .88rem; font-weight: 700; }
+    .sns-acc-url { font-size: .68rem; color: rgba(160,160,176,.5); margin-top: 2px; word-break: break-all; }
+    .sns-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+      gap: 8px; margin: 10px 0 8px; }
+    .sns-metric { min-width: 0; background: rgba(255,255,255,.04);
+      border-radius: 7px; padding: 7px 6px; text-align: center; }
+    .sns-metric-k { font-size: .64rem; color: var(--sub); }
+    .sns-metric-v { font-size: .95rem; font-weight: 700; color: var(--accent); margin-top: 2px; }
+    .sns-memo { font-size: .75rem; color: var(--sub); line-height: 1.6; }
+    .sns-verdict { margin-top: 14px; background: rgba(255,45,85,.08); border: 1px solid rgba(255,45,85,.3);
+      border-radius: 10px; padding: 12px 15px; font-size: .81rem; color: var(--sub); line-height: 1.7; }
+
     /* Portfolio */
     .pf-note { font-size: .82rem; color: var(--sub); line-height: 1.65; margin-bottom: 14px; }
     .pf-note b { color: var(--text); }
@@ -271,8 +293,8 @@ const D = {
     pillars: [
       { icon:"🎯", title:"キラーコンテンツ2本に集中",
         body:"実際に売れた <b>断酒クエスト</b> と <b>ジオアラーム</b> のみをマーケティング対象に確定。他のアプリは当面「在庫」として持つだけで、宣伝コストは掛けない。" },
-      { icon:"📣", title:"SNS を学びながら回す（ヒーローズスクール）",
-        body:"8/9 入会。10/15 までに「完全無料で辞める」か「80万円払って続ける」かを判断。判断材料は<b>この2ヶ月で実際に数字が動いたか</b>の一点。" },
+      { icon:"📣", title:"外部の目を入れる（ヒーローズスクール）",
+        body:"8/9 入会。狙いは SNS の技術習得より <b>マネージャーを付けて第三者に評価してもらうこと</b>。止まった案件は全て「他人が関わる工程」で止まっており、<b>外部の目を強制的に入れる装置</b>として使う。条件は <b>10/15 までに YouTube 10万再生に届かなければ無料解約</b>。" },
       { icon:"🤖", title:"Android で母数を倍にする",
         body:"8/12 Google Play Console 加入・8/13 実機到着。断酒クエスト／ジオアラームの Android 版を最優先で公開し、同じマーケ施策の受け皿を2倍にする。" },
       { icon:"💴", title:"稼ぎながら学ぶ（ランサーズ・外注）",
@@ -282,8 +304,13 @@ const D = {
     openQuestions: [
       { q:"技術を極めるか、マーケティングに行くか",
         stance:"当面は<b>マーケ 7：技術 3</b>。技術は「キラー2本を売るために必要な分」だけ深掘りする。10/15 のヒーローズスクール判断とセットで再評価。" },
+      { q:"⚠️ 自覚済みリスク：作り続けること自体がアイデンティティになっている",
+        stance:"閃いて作る行為が「自分らしさ」と結びついているという<b>本人の自己申告あり</b>。データ上も 15週で20本・週1.3本という速度が出ている一方、稼ぎ頭の断酒クエストは6/05以降 放置。<b>「作らない期間」に不安を感じたら、それは方針が間違っている合図ではなく、この癖が出ている合図</b>と解釈する。10/15までは新規作成を凍結し、代わりに「既存を掘る」を成果としてカウントする。" },
       { q:"デザイン・音楽の力不足（ポモドーロが止まった理由）",
         stance:"自分で学ぶのではなく<b>ツールで埋める</b>方針に寄せる（Canva / Midjourney 等のライセンス検討）。学習に時間を溶かすのは今のフェーズでは負け筋。" },
+      { q:"10万再生は「払う理由」になるか",
+        stance:"短尺の10万再生は<b>それ自体では ほぼ無価値</b>（短尺の広告収益は長尺より更に低く、数千円〜数万円規模）。従って払う判断の根拠は再生数ではなく次の2点。<br>① <b>その再生数を、来年 自分だけで再現できるか</b>（＝スキルが残ったか）<br>② <b>再生数がアプリDL・売上に変換されたか</b>（＝計測導線 S-6 が前提）<br>この2つが揃わなければ、10万再生を達成しても<b>払う理由にはならない</b>。",
+      },
       { q:"無料サーバ・無料API の限界",
         stance:"「無料枠が詰まって困っている実サービス」がどれかを先に特定してから課金する。予防的な有料化はしない。" },
       { q:"ゲーム開発への興味",
@@ -293,8 +320,8 @@ const D = {
 
   // ── ブロッカー（最優先・終わるまで他作業NG）──
   blockers: [
-    { label:"ヒーローズスクール 継続 / 撤退の判断",
-      note:"8/9 入会。10月中旬に「完全無料で辞める」か「80万円払って継続」かの二択。<b>8/14 にカード会社と会話</b>、8/15 入学ガイダンス。判断を感覚でやらないために、入会〜10/15 の SNS 指標（フォロワー・流入・DL・売上）を必ず記録しておくこと。",
+    { label:"ヒーローズスクール — 10万再生 チャレンジ",
+      note:"<b>契約条件：10/15 までに講座動画を視聴し、短尺（TikTok / YouTubeショート / Instagram のいずれか）で 10万再生に達しなければ無料解約可。達すれば 80万円を払って継続。</b><br>⚠️ <b>無料解約の権利は「動画を全部見た」ことが条件</b>。視聴をサボると解約条件を満たせず 80万円の支払い義務が残る恐れがある。<b>視聴は任意ではなく、撤退オプションの購入代金</b>と考えること。8/14 カード会社 / 8/15 ガイダンスで<b>解約条件の正確な文言を書面で確認</b>する。",
       deadline:"2026-10-15" },
   ],
 
@@ -304,13 +331,15 @@ const D = {
     { date:"2026-08-12", label:"✅ Google Play Console 加入", proj:"android", pr:"high" },
     { date:"2026-08-13", label:"📦 Android 実機 到着 → 実機デバッグ環境構築", proj:"android", pr:"high" },
     { date:"2026-08-14", label:"💳 カード会社と協議（80万円の支払い手段確認）", proj:"sns", pr:"high" },
-    { date:"2026-08-15", label:"🎓 ヒーローズスクール 入学ガイダンス", proj:"sns", pr:"high" },
+    { date:"2026-08-15", label:"🎓 入学ガイダンス＋短尺プラットフォーム3択を1つに確定", proj:"sns", pr:"high" },
     { date:"2026-08-15", label:"📝 ランサーズ アンケート案件① 09:00", proj:"other", pr:"high" },
     { date:"2026-08-31", label:"🤖 断酒クエスト Android版 公開", proj:"android", pr:"high" },
     { date:"2026-08-31", label:"🤖 ジオアラーム Android版 公開", proj:"android", pr:"high" },
-    { date:"2026-09-15", label:"📊 SNS 中間レビュー（数字が動いたか検証）", proj:"sns", pr:"high" },
+    { date:"2026-08-31", label:"📺 講座動画 視聴 1/3 完了（解約条件の履行）", proj:"sns", pr:"high" },
+    { date:"2026-09-15", label:"📊 中間レビュー（再生数の伸び＋視聴 2/3 完了）", proj:"sns", pr:"high" },
+    { date:"2026-10-10", label:"📺 講座動画 全視聴 完了 ← 無料解約の必須条件", proj:"sns", pr:"high" },
     { date:"2026-09-30", label:"📝 ランサーズ アンケート案件 3件 完了", proj:"other", pr:"mid" },
-    { date:"2026-10-15", label:"⚖️ ヒーローズスクール 継続/撤退 最終判断", proj:"sns", pr:"high" },
+    { date:"2026-10-15", label:"⚖️ 10万再生 判定 → 継続(¥800,000) or 無料解約", proj:"sns", pr:"high" },
   ],
 
   // ── メインプロジェクト: キラーコンテンツ2本 ──
@@ -333,6 +362,8 @@ const D = {
       "Google Play Console 加入（2026-08-12）",
       "ヒーローズスクール 入会（2026-08-09）— SNS 戦略の学習ルート確保",
       "ランサーズ アンケート案件 3件 受注",
+      "OshiPay の失敗要因を言語化・公開（note 第七話「プロダクトアウトの罠」）",
+      "SNS ベースライン取得（note 562 / X 540 / 売上¥0・2026-08-12）",
     ],
     wbs:[
       { id:"A", label:"A. 断酒クエスト — キラー①", prClass:"ph", prLabel:"🔴 高",
@@ -352,11 +383,16 @@ const D = {
         ]},
       { id:"C", label:"C. SNS 戦略（ヒーローズスクール）", prClass:"ph", prLabel:"🔴 高",
         tasks:[
-          { id:"S-1", name:"8/14 カード会社と協議", detail:"80万円の支払手段・分割可否・キャンセル条件を確認。撤退時にコストが発生しないことを必ず確認する。", pr:"high", st:"todo" },
+          { id:"S-1", name:"8/14 カード会社と協議", detail:"支払手段・分割可否・キャンセル条件を確認。<b>「10万再生未達なら無料解約」の正確な条件（視聴義務・期限・書面の有無）を確認し、口頭ではなく文面で残す。</b>", pr:"high", st:"todo" },
           { id:"S-2", name:"8/15 入学ガイダンス 出席", detail:"カリキュラム全体像と、10/15 までに何が身につくのかを確認して持ち帰る。", pr:"high", st:"todo" },
-          { id:"S-3", name:"判断基準の数値化（10/15 の意思決定用）", detail:"入会前の数字をベースラインとして記録し、10/15 時点のフォロワー・流入・DL・売上と比較する。基準を先に決めておかないと感情で判断してしまう。", pr:"high", st:"todo" },
+          { id:"S-3", name:"判断基準の数値化（10/15 の意思決定用）", detail:"✅ ベースライン取得済み（8/12: note 562 / X 540 / 売上¥0）。残タスクは<b>合格ラインの数値を先に文字にすること</b>。デフォルトは撤退とし、継続側に立証責任を置く。", pr:"high", st:"doing" },
+          { id:"S-6", name:"SNS→アプリ の送客計測導線を作る", detail:"現在 X からアプリへの流入が計測できていない。<b>計測がないまま2ヶ月走ると、10/15 に評価材料がない</b>という最悪の結末になる。専用リンク等で最優先に設置する。", pr:"high", st:"todo" },
+          { id:"S-7", name:"マネージャーへの評価依頼（本来の入会目的）", detail:"入会の本質的な狙いは第三者評価。<b>ガイダンス時点で「誰が・どの頻度で・何を見てくれるのか」を確認する。</b>ここが曖昧なら 80万円の根拠が消える。", pr:"high", st:"todo" },
           { id:"S-4", name:"アプリ発信用アカウントの設計", detail:"個人 / 断酒 / ジオアラーム のアカウント設計。キャラを分けるか一本化するかを最初に決める。", pr:"high", st:"todo" },
           { id:"S-5", name:"9/15 中間レビュー", detail:"ここで手応えゼロなら 10/15 は撤退寄り。1ヶ月前に仮判断しておく。", pr:"mid", st:"todo" },
+          { id:"S-8", name:"講座動画の視聴（＝無料解約の必須条件）", detail:"<b>これをサボると 80万円の支払い義務が残る</b>。総本数と期限を初日に確認し、週あたりの必要視聴本数を逆算してカレンダーに固定する。8/31=1/3、9/15=2/3、10/10=完了 のチェックポイントで管理。", pr:"high", st:"todo" },
+          { id:"S-9", name:"10万再生チャレンジ — プラットフォーム選定", detail:"<b>TikTok / YouTubeショート / Instagram の3択から1つに絞る（8/15確定）。</b>3つ同時は分散して届かない。判断軸は「断酒・ジオアラームのターゲットがいる場所」。断酒＝当事者コミュニティが濃い、ジオアラーム＝汎用ライフハック系、と客層が違う点に注意。", pr:"high", st:"todo" },
+          { id:"S-10", name:"10万再生チャレンジ — 企画をアプリと接続する", detail:"<b>短尺は再生数を稼ぎやすいがアプリDLに繋がりにくい。</b>バズ狙いの無関係コンテンツで10万を取っても、10/15 に「数字は出たが売上ゼロ」で終わる。<b>断酒・ジオアラームのテーマと重なる企画に限定し、プロフィール導線を必ず設置する。</b>", pr:"high", st:"todo" },
         ]},
       { id:"D", label:"D. Android 展開 基盤", prClass:"ph", prLabel:"🔴 高",
         tasks:[
@@ -377,6 +413,32 @@ const D = {
           { id:"H-2", name:"ゲーム開発への参入", detail:"興味あり。ただし 10/15 の判断以降に持ち越し。今はアイデアメモのみ。", pr:"low", st:"future" },
         ]},
     ]
+  },
+
+  // ── SNS 現況（10/15 判断のベースライン）──
+  sns: {
+    baselineDate:"2026-08-12",
+    note:"<b>この数字が 10/15 判断の基準線</b>。ヒーローズスクール入会（8/9）直後の実測値として固定し、10/15 に同じ項目を再計測して比較する。基準線を残さないと「なんとなく増えた気がする」で 80万円を判断することになる。",
+    accounts:[
+      { name:"note（おやじの副業ブログ）", url:"https://note.com/crisp_rue6588",
+        followers:562, plan:"—",
+        metrics:[ { k:"フォロワー", v:"562" }, { k:"メンバーシップ会員", v:"0名" }, { k:"売上", v:"¥0" } ],
+        memo:"フォロワー562に対し課金0。<b>「読まれてはいるが、払われていない」</b>状態。母数の問題ではなく転換の問題。" },
+      { name:"X（@Oyajibuki）", url:"https://x.com/Oyajibuki",
+        followers:540, plan:"無料会員",
+        metrics:[ { k:"フォロワー", v:"540" }, { k:"プラン", v:"無料会員" }, { k:"アプリ送客", v:"未計測" } ],
+        memo:"アプリへの送客が計測できていない。<b>まず計測導線を作らないと SNS 施策の効果が判定できない。</b>" },
+    ],
+    accountsYT:[
+      { name:"🎯 10万再生チャレンジ（短尺）", url:"https://www.youtube.com/@BOINGMOCHA/shorts",
+        metrics:[ { k:"対象", v:"短尺3択" }, { k:"再生数", v:"要計測" }, { k:"残り", v:"10万" } ],
+        memo:"<b>TikTok / YouTubeショート / Instagram のいずれか1つ</b>で 10万再生を狙う。<b>まず「どれでやるか」を8/15に確定</b>。3つ同時は分散して届かない。既存（BOING MOCHA ショート）を使うか新規かも合わせて決める。" },
+      { name:"YouTube / SelfRepublic（長尺）", url:"https://www.youtube.com/@RepablicSelf",
+        metrics:[ { k:"状態", v:"停止中" }, { k:"今回", v:"対象外" } ],
+        memo:"長尺は今回の 10万再生チャレンジの対象外。10/15 まで凍結のまま。" },
+    ],
+    total:1102,
+    verdict:"合計フォロワー <b>1,102</b>・そこから生まれた売上 <b>¥0</b>。<b>母数はすでにゼロではない</b>ため、10/15 の争点は「フォロワーや再生数が増えたか」ではなく <b>「それが円に変わる導線ができたか」</b>、そして <b>「来年これを自分だけで再現できるか」</b>の2点である。",
   },
 
   // ── 公開実績（ポートフォリオ）──
@@ -437,19 +499,28 @@ const D = {
             "最小構成で切り出して先行提案する案も検討",
             "営業リストは完成前から作れる"] },
     { name:"OshiPay", status:"pend", progress:85,
-      link:"https://oshipay.me",
-      desc:"⏸ 本番稼働中だが、キラー2本への集中方針により当面は現状維持。サーバ・cron の稼働監視のみ。",
-      subs:["Stripe Connect / Supabase / Resend で稼働中",
-            "GitHub Actions cron 毎時実行",
-            "新規開発・営業は停止（維持のみ）"] },
+      link:"https://note.com/crisp_rue6588/n/n833afa6675ca",
+      desc:"⏸ <b>戦略的ペンディング（放棄ではない）</b>。市場に当てた結果「面白いですね」とは言われるが登録に至らず、登録されても熱量あるファンがいなければ決済が発生しない、と判明。<b>プロダクトアウトの罠</b>として note 第七話に言語化済み。<b>再投入条件：自分の認知度を上げてから（＝マーケットイン側から）打ち直す。</b>",
+      subs:["✅ 学び: 関心と登録行動の間に大きな溝がある（プロダクトアウトの罠）",
+            "✅ 学び: 投げ銭は「送り手の熱量」が先に必要 — 場を作っても金は動かない",
+            "🔒 再投入条件: SNS で自分の認知度が立ってから",
+            "維持のみ（Stripe / Supabase / Resend / cron 稼働中・新規開発と営業は停止）"] },
     { name:"AutoCraft（業務改善ツール）", status:"pend", progress:50,
       link:"https://oyajibuki.github.io/tools/",
       desc:"⏸ 現状維持。RouteLog の法人営業と一緒に持っていける可能性はある。",
       subs:[] },
-    { name:"おやじの副業ブログ", status:"pend", progress:100,
+    { name:"note（おやじの副業ブログ）", status:"run", progress:40,
       link:"https://note.com/crisp_rue6588",
-      desc:"⏸ 更新終了・アーカイブ化済み。SNS 戦略が回り始めたら再利用の資産として活用余地あり。",
-      subs:["メンバーシップ① 300円/月 ／ ② 980円/月"] },
+      desc:"フォロワー <b>562名</b>・メンバーシップ <b>0名</b>・売上 <b>¥0</b>。OshiPay開発記など発信は継続中。<b>読者はいるが課金導線が機能していない</b>のが実態。",
+      subs:["フォロワー 562名（2026-08-12 実測）",
+            "メンバーシップ① 300円/月 ／ ② 980円/月 → 加入 0名",
+            "課題は母数ではなく転換（フォロワー→会員）"] },
+    { name:"X（@Oyajibuki）", status:"run", progress:30,
+      link:"https://x.com/Oyajibuki",
+      desc:"フォロワー <b>540名</b>・無料会員。<b>アプリへの送客が未計測</b>で、SNS施策の効果を判定できない状態。計測導線の設置が先。",
+      subs:["フォロワー 540名（2026-08-12 実測）",
+            "アプリ送客の計測導線が未設置 ← 最優先で解決",
+            "断酒 / ジオアラーム の発信アカウント設計はこれから"] },
     { name:"SelfRepublic / ショート動画 / バー活用", status:"pend", progress:20,
       link:"https://www.youtube.com/@RepablicSelf",
       desc:"⏸ すべてペンディング。10/15 の判断まで着手しない。",
@@ -487,9 +558,12 @@ const D = {
 
   // ── フォーカス ──
   focus:[
-    "🚨 【最優先】10/15 ヒーローズスクール判断のため、今日から SNS 指標のベースラインを記録する",
+    "🚨 【最優先】App Store Connect でアプリ別 DL数・課金率を出す（2本が実力かノイズかの判定／8/14より前に）",
+    "📊 【最優先】SNS→アプリ の送客計測導線を設置（計測なしで2ヶ月走ると10/15に評価できない）",
+    "✅ 【8/12完了】SNS ベースライン取得（note 562 / X 540 / 売上¥0）",
     "💳 【8/14】カード会社と協議 — 撤退時にコストが出ないことを必ず確認",
-    "🎓 【8/15】入学ガイダンス 出席",
+    "🎓 【8/15】入学ガイダンス — 講座動画の総本数・視聴期限・解約条件の文言を確認",
+    "📺 【継続】講座動画の視聴は「無料解約オプションの代金」。サボると80万の支払い義務が残る",
     "📝 【8/15 09:00】ランサーズ アンケート案件①",
     "📦 【8/13】Android 実機到着 → 署名鍵作成・実機デバッグ環境構築",
     "🤖 【8月末〆】断酒クエスト・ジオアラーム の Android 版 公開",
@@ -504,10 +578,14 @@ const D = {
     { lbl:"iOS 公開数",            val:"11本 (+2申請中)", tgt:"100本（中長期・現在13%）" },
     { lbl:"Android 公開数",        val:"0本",        tgt:"2本（8月末）" },
     { lbl:"課金実績のあるアプリ",  val:"2 / 11本",   tgt:"打率を上げる（本数より単価）" },
-    { lbl:"SNS フォロワー",        val:"要計測",     tgt:"ベースラインを 8/15 に記録" },
+    { lbl:"SNS フォロワー 合計",   val:"1,102",      tgt:"note 562 / X 540（8/12基準）" },
+    { lbl:"SNS 経由 売上",         val:"¥0",         tgt:"10/15までに 80万を正当化する額" },
+    { lbl:"note メンバーシップ",   val:"0名",        tgt:"562フォロワーからの転換" },
     { lbl:"ランサーズ 受注",       val:"3件",        tgt:"9月末までに完了" },
     { lbl:"月次固定費",            val:"要棚卸し",   tgt:"上限を決めて売上と連動" },
-    { lbl:"ヒーローズ判断まで",    val:"10/15",      tgt:"継続=¥800,000 / 撤退=¥0" },
+    { lbl:"短尺 再生数",           val:"0 / 100,000", tgt:"TikTok/YTショート/IG から1つ選定" },
+    { lbl:"講座動画 視聴進捗",     val:"0%",         tgt:"10/10 までに100%（無料解約の条件）" },
+    { lbl:"ヒーローズ判断まで",    val:"10/15",      tgt:"10万到達=¥800,000 / 未達=¥0" },
   ]
 }
 
@@ -765,6 +843,35 @@ m.wbs.forEach((ep,ei) => {
   h += `</div></div>`
 })
 h += `</div>` // end featured
+
+/* ── SNS baseline ── */
+if (D.sns) {
+  const sn = D.sns
+  h += `<div class="card">
+    <h2>📣 SNS 現況 — 10/15 判断のベースライン</h2>
+    <span class="sns-baseline">📌 基準日 ${sn.baselineDate}（合計フォロワー ${sn.total.toLocaleString()}）</span>
+    <div class="sns-note">${sn.note}</div>
+    <div class="sns-grid">`
+  ;[...sn.accounts, ...(sn.accountsYT||[])].forEach(a => {
+    h += `<div class="sns-acc">
+      <div class="sns-acc-hd">
+        <div>
+          <div class="sns-acc-name">${a.name}</div>
+          <div class="sns-acc-url">${a.url}</div>
+        </div>
+        <a href="${a.url}" target="_blank" class="btn ac">Open →</a>
+      </div>
+      <div class="sns-metrics">`
+    a.metrics.forEach(mt => h += `<div class="sns-metric">
+      <div class="sns-metric-k">${mt.k}</div>
+      <div class="sns-metric-v">${mt.v}</div>
+    </div>`)
+    h += `</div><div class="sns-memo">${a.memo}</div></div>`
+  })
+  h += `</div>
+    <div class="sns-verdict">⚖️ ${sn.verdict}</div>
+  </div>`
+}
 
 /* ── Portfolio ── */
 if (D.portfolio) {
