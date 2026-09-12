@@ -114,7 +114,7 @@
     .sub-item::before { content: "↳ "; color: var(--accent2); }
 
 
-    /* ── 月5万 ロードマップ ── */
+/* ── 月5万 ロードマップ ── */
     .inc-hd-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
     .inc-goal { font-size:1.4rem; font-weight:700;
       background:linear-gradient(90deg,#4cd964,#00f2fe);
@@ -332,8 +332,8 @@
 // ═══════════════════════════════════════════
 const D = {
   title:   "副業・個人開発 統合ダッシュボード",
-  subtitle:"🚨 動画 0/46本・残り6.5週 — 「決めていない」が唯一のボトルネック",
-  updated: "2026-09-06",
+  subtitle:"⏳ 全額返金の期限は 11/30 — 10/31 と 11/25 の2回で「やめる」を判断しきる",
+  updated: "2026-09-13",
 
   // ── 戦略サマリー（フェーズ・方針）──
   strategy: {
@@ -402,8 +402,13 @@ const D = {
     { date:"2026-09-30", label:"🤖 断酒クエスト Android版 公開（後ろ倒し確定）", proj:"android", pr:"mid" },
     { date:"2026-09-30", label:"💴 月次収益 ¥50,000 到達判定（受託＋アプリ課金の合算）", proj:"other", pr:"high" },
     { date:"2026-09-30", label:"📝 ランサーズ アンケート案件 3件 完了", proj:"other", pr:"mid" },
+    { date:"2026-10-01", label:"🗣 面談 20:10〜20:40 — 試作動画を見せる／<b>返金条件を文面で取る</b>", proj:"sns", pr:"high" },
+    { date:"2026-10-01", label:"⏳ 全額返金 期間スタート（ここから2ヶ月）", proj:"sns", pr:"high" },
     { date:"2026-10-10", label:"📺 講座動画 全視聴 完了 ← 無料解約の必須条件", proj:"sns", pr:"high" },
-    { date:"2026-10-15", label:"⚖️ 10万再生 判定 → 継続(¥800,000) or 無料解約", proj:"sns", pr:"high" },
+    { date:"2026-10-15", label:"⚖️ 10万再生 判定 → ❓11/30の返金期限との関係を10/1に要確認", proj:"sns", pr:"mid" },
+    { date:"2026-10-31", label:"📊 チェック① 1ヶ月の実績を数字で確認（継続可否の仮判断）", proj:"sns", pr:"high" },
+    { date:"2026-11-25", label:"🚨 チェック② <b>意思表示の日 — やめるならこの日に伝える</b>", proj:"sns", pr:"high" },
+    { date:"2026-11-30", label:"⛔ 全額返金の期限 — ここを過ぎると支払い確定", proj:"sns", pr:"high" },
   ],
 
   // ── メインプロジェクト: キラーコンテンツ2本 ──
@@ -503,21 +508,48 @@ const D = {
 
   // ── ヒーローズスクール 履行条件（無料解約の必須要件）──
   heroes: {
-    deadline:"2026-10-15",
-    weeks:6.6,
-    warn:"下記は「頑張る目標」ではなく <b>無料解約の権利を維持するための必須条件</b>。<b>8/30 時点で動画は 0本、すでに約2週間分（約9本）が未履行</b>。80万円が「選べる支出」から「避けられない支出」に変わりかけている。<b>8/15 に取得した書面で「未達の定義」と「遅延分の挽回可否」を今すぐ確認すること</b>。",
-    capacity:"⏱️ <b>稼働は問題ではなかった</b>：週7時間の枠に対し必要は週2.5時間。時間は最初から足りていた。<b>2週間で0本だった真因は「プラットフォーム未確定」という上流の1点</b> — どれ向けの尺・字幕・音かが決まらず台本が書けなかった。<br>⚠️ 残り6.5週で <b>週5本ペースなら約33本、遅延分も取り返すなら週7本</b>。<b>先延ばしのコストが週ごとに複利で増える</b>フェーズに入っている。<br>なお <b>Android移植・ASO・受託 も同じ1日1時間を取り合う</b>。→ Android は<b>ジオアラーム1本に絞って9/10、断酒クエストは9月末へ後ろ倒し</b>で確定。",
+    deadline:"2026-11-30",
+    weeks:11,
+    warn:"<b>全額返金の期限が 2026-10-01 から2ヶ月間（＝11/30 まで）に確定</b>。ここを過ぎると支払いが確定する。<b>目的は「10万再生を取ること」ではなく「期限内に返金を成立させること」に切り替える</b>。そのために意思決定日を先に固定する — <b>10/31 に継続可否を仮判断し、11/25 に「これでやめます」と伝える</b>。11/25 を置くのは、月末ぎりぎりに言い出すと先方の事務処理待ちで期限を跨ぐリスクがあるため。<br>⚠️ <b>旧「10/15 に10万再生判定」との関係が未確認</b>。返金条件が 11/30 に一本化されたのか、10/15 の判定が別に残るのかを <b>10/1 の面談で必ず確認し、書面に残す</b>。",
+    capacity:"📋 <b>9/上旬の面談で決まった方針</b>：今後1年間、SNS運用の伴走でアプリの認知拡大・DL増を狙う。媒体は <b>TikTok / Instagram / YouTube Shorts の3つ</b>、AIを使ったエンタメ系ショート動画から始めて、動画→プロフィール→アプリへ誘導する。最初の3ヶ月は<b>「完璧主義ではなく完了主義」</b>で リサーチ→制作・投稿→分析→改善 を回す。<br>🎯 <b>ベンチマークの基準</b>：再生数 <b>10万回以上</b> かつ <b>再生数 ÷ フォロワー数 が 4倍以上</b>。この条件を満たす動画の構成・テンポ・カット数を型として真似る。<br>⚠️ <b>この1年契約と、上の返金期限（11/30）は別の話として扱うこと</b>。伴走を続けるかどうかは、11/25 までに自分で決める。",
     reqs:[
-      { icon:"🎬", label:"動画アップロード", rule:"週5本 ／ 尺は30秒以上",
-        total:"現在 <b>0本</b>／残り約 <b>33本</b>（6.5週）", risk:"🚨 <b>2週間で0本。約9本の遅れ</b>。原因は時間ではなく<b>プラットフォーム未確定</b>。9/1 に確定し 9/2 に1本目を出せば週5本ペースで間に合う。<b>あと1週遅れると週7本になり、そこから先は現実的でなくなる</b>" },
-      { icon:"🏫", label:"講習会 参加", rule:"週1回",
-        total:"10/15まで <b>約7回</b>", risk:"日時は書面で確定済み。<b>8/18以降の参加実績を要記入</b>（未参加分があれば動画と同様に取り返しの可否を確認）" },
-      { icon:"📺", label:"講座動画 視聴", rule:"期限内に完了",
-        total:"総本数は <b>書面で確認済み → 要記入</b>", risk:"8/15 で総量は判明済み。<b>残り6.5週で割った「週あたり必要視聴本数」をカレンダーに固定する</b>。動画投稿の遅れがここにも波及していないか要点検" },
-      { icon:"🎯", label:"再生数（判定指標）", rule:"短尺 10万再生",
-        total:"現在 <b>0 / 100,000</b>（投稿0本）", risk:"達成＝80万円支払い。未達＝無料解約。<b>皮肉だが「達成すると出費が発生する」構造</b>。投稿0本のまま6.5週なので、現実的には<b>無料解約側に大きく傾いている</b> — その前提で条件履行だけは切らさないのが最適手" },
+      { icon:"📝", label:"初回面談アンケート", rule:"回答して提出",
+        total:"✅ <b>2026-09-12 提出済み</b>", risk:"完了。以降のタスクはここから派生する" },
+      { icon:"🔍", label:"ベンチマーク動画の選定", rule:"TikTok / IG / YT Shorts で AIエンタメ系をリサーチ",
+        total:"<b>10/1 の面談まで</b>", risk:"紹介された15アカウントが下のセクションにある。<b>ゼロから探すのではなく、まずこの15本から「10万再生かつフォロワー比4倍」を満たすものを選ぶ</b>。リサーチを広げすぎると制作時間が消える" },
+      { icon:"🎬", label:"試作ショート動画", rule:"1本以上・投稿できる状態まで",
+        total:"<b>10/1 の面談まで</b>", risk:"<b>前回サイクルの失敗はここで起きた</b> — 媒体を決めきれず2週間で0本だった。今回は<b>ベンチマークを1本に絞り、その構成をそのままなぞる</b>ことで着手コストを下げる。完成度は問わない" },
+      { icon:"📱", label:"投稿用アカウント準備", rule:"TikTok / Instagram / YouTube",
+        total:"<b>発信方針が固まってから</b>", risk:"面談で「方針が固まった段階で」と明示されている。<b>先に3媒体ぶん作ると運用が分散する</b>。10/1 で方針を固め、まず1媒体で始めるのが安全" },
     ],
-    verdict:"8/13 の予測は<b>半分外れた</b>。「折れるのは6〜7週目」と読んでいたが、実際は <b>1週目で1本も出なかった</b>。継続の問題ですらなく、<b>開始できなかった</b>。<br>これは意志の問題ではなく設計の問題で、原因は <b>3択を保留したまま走り出したこと</b>。人目に晒す作業は、選択肢が残っていると「まだ決まってないから」という正当な先延ばし理由を無限に供給する。<br>→ 対策はただ1つ。<b>9/1 に強制確定し、9/2 に完成度を問わず1本出す</b>。1本出た後の46本と、0本のままの46本は、難易度が別物になる。<b>10万再生はもう狙わない。狙うのは「条件を切らさずに無料解約に着地すること」と「断酒クエストの見込み客が33本分残ること」</b>。",
+    verdict:"<b>▌ 出口から逆算する</b><br><b>10/1（木）20:10〜20:40 面談</b> — ベンチマークと試作動画を見せ、投稿方針を具体化する。<b>ここで必ず「全額返金の正確な条件・申し出の締切・必要な手続き」を聞いて文面で残す</b>。口頭の「2ヶ月」だけで11月を迎えない。<br><b>10/31 チェック①</b> — 1ヶ月やってみた結果を数字で見る。投稿本数・再生数・プロフィール流入・アプリDL。<b>ここで手応えゼロなら、11/25 に返金を申し出る前提で残り1ヶ月を走る</b>（条件履行だけは切らさない）。<br><b>11/25 チェック② — 意思表示の日</b>。継続するに足る数字が出ていなければ、この日に<b>「これでやめます」と伝える</b>。判断を11/30まで引っ張らない。<br>💡 <b>デフォルトは「やめる」</b>。継続する側に立証責任を置く。前回の 80万円判断と同じ構えで、<b>「なんとなく伸びている気がする」で期限を跨がないこと</b>が唯一の失敗パターン。",
+  },
+
+  // ── ベンチマーク候補（面談で紹介された参考アカウント）──
+  bench: {
+    note:"面談で紹介された参考アカウント。<b>選定基準は「再生数10万回以上 かつ 再生数÷フォロワー数が4倍以上」</b>。ここから型にする1本を選び、構成・テンポ・カット数をなぞる。<b>自分で一から探し直さないこと</b> — リサーチは無限に時間を吸う。",
+    groups:[
+      { label:"エンタメ系（作品として見せる）",
+        items:[
+          { name:"AI動画ラボコイコイ", url:"https://www.tiktok.com/@ai_lobo_koikoi", memo:"" },
+          { name:"Olmayansahneler", url:"https://www.tiktok.com/@olmayansahneler", memo:"" },
+          { name:"cibertales", url:"https://www.tiktok.com/@cibertales1", memo:"" },
+          { name:"新・怪奇物語集", url:"https://www.tiktok.com/@shinkaiki1022", memo:"怪談・怖い話を映像化する型。スクール誘導で収益化までつながっている実例" },
+          { name:"ふるふるの大冒険", url:"https://www.tiktok.com/@ai_am_furufuru", memo:"AIキャラクターが日常を過ごす型" },
+          { name:"Chloe VS History", url:"https://www.tiktok.com/@chloe.vs.history/video/7609646767805582614", memo:"歴史上の場面を「その場にいた人の自撮り」として再現する型" },
+          { name:"AVALI Official", url:"https://www.tiktok.com/@avali_ai", memo:"AIシンガー・AIキャラクター。歌わせる型" },
+          { name:"narumina", url:"https://www.tiktok.com/@narumina3", memo:"AI動画クリエイター" },
+          { name:"hirosasaki", url:"https://www.instagram.com/reel/DXayb0jid4w/", memo:"AIアバター（Instagram Reel）" },
+        ] },
+      { label:"情報系（ツール・活用法を教える）",
+        items:[
+          { name:"KEITO｜AIディレクター", url:"https://www.tiktok.com/@keito_cc", memo:"AI最新情報・ツール解説。この分野の代表格" },
+          { name:"Masayume", url:"https://www.tiktok.com/@ceomasayume", memo:"AI最新情報・AIビジネス" },
+          { name:"AI FREAK", url:"https://www.tiktok.com/@ai.freak.tiktok", memo:"作品を見せつつ作り方を売る導線。エンタメと情報の中間" },
+          { name:"ゆい", url:"https://www.tiktok.com/@yui_ai_life", memo:"AI・Excel・仕事効率化" },
+        ] },
+    ],
+    fit:"<b>▌ 自分の資産と噛み合うのはどれか</b><br><b>「新・怪奇物語集」と「ふるふるの大冒険」の型が最も転用しやすい</b> — どちらも<b>キャラクターを立てて連載する構造</b>で、断酒クエスト／運動クエスト／勉強クエストの<b>RPGキャラをそのまま主人公にできる</b>。アプリの世界観と動画の世界観が一致するので、プロフィール→アプリの導線が不自然にならない。<br>逆に <b>情報系（KEITO / Masayume）は伸ばしやすいが、アプリDLには繋がりにくい</b>。AI情報を見に来た人は断酒アプリを落とさない。<b>再生数は出るがDLが増えない</b>という、前回の計画で警戒していたのと同じ失敗になる。",
   },
 
   // ── 月5万 ロードマップ ──
@@ -573,15 +605,18 @@ const D = {
   portfolio: {
     note:"「作る力」はすでに証明済み。ここから先の課題は本数ではなく、<b>公開した1本あたりをどう売るか</b>。",
     stats:[
-      { lbl:"iOS 公開中",     val:"11本", sub:"App Store 掲載中" },
-      { lbl:"iOS 審査申請中", val:"2本",  sub:"承認待ち → 計13本" },
-      { lbl:"Android 公開中", val:"0本",  sub:"8月末に2本 公開予定" },
-      { lbl:"うち課金実績あり", val:"2本", sub:"断酒クエスト / ジオアラーム" },
+      { lbl:"iOS 公開中",     val:"14本", sub:"App Store 掲載中" },
+      { lbl:"iOS 審査申請中", val:"4本",  sub:"承認待ち → 計18本" },
+      { lbl:"Android 公開中", val:"0本",  sub:"ジオアラームから順次" },
+      { lbl:"うち課金実績あり", val:"3本", sub:"NonStop / 断酒クエスト / ジオアラーム" },
     ],
     links:[
-      { label:"📱 iOSアプリ 一覧",   url:"https://oyajibuki.github.io/",       desc:"公開中の iOS アプリ 11本（＋申請中2本）" },
+      { label:"📱 iOSアプリ 一覧",   url:"https://oyajibuki.github.io/",       desc:"公開中 14本（＋審査・申請中4本）／ 金額・構想リストは非掲載" },
       { label:"🛠 WEBアプリ サマリ", url:"https://oyajibuki.github.io/tools/", desc:"AutoCraft の業務改善ツール群" },
-      { label:"🗂 サイトのリポジトリ（GitHub）", url:"https://github.com/oyajibuki/oyajibuki.github.io", desc:"⚠️ 会議分給メーター / TuneDrop Focus が未掲載 → リンク追加が必要" },
+      { label:"📮 お問い合わせフォーム", url:"https://oyajibuki.github.io/form/", desc:"受託の窓口。提案文に貼るURLはここ" },
+      { label:"🗂 サイトのリポジトリ", url:"https://github.com/oyajibuki/oyajibuki.github.io", desc:"GitHub — 全18本を掲載済み" },
+      { label:"🗂 フォームのリポジトリ", url:"https://github.com/oyajibuki/form", desc:"GitHub — お問い合わせフォーム" },
+      { label:"🗂 このダッシュボードのリポジトリ", url:"https://github.com/oyajibuki/ops-dashboard", desc:"GitHub — 全体タスクの管理元" },
     ],
   },
 
@@ -814,9 +849,9 @@ function renderCalendar() {
     <button class="cal-nav-btn" onclick="moveCal(1)">▶</button>
   </div>`
 
-  // Upcoming milestones (today → +70 days)
+  // Upcoming milestones (today → +100 days)
   const lo = new Date(); lo.setHours(0,0,0,0)
-  const hi = new Date(lo); hi.setDate(hi.getDate()+70)
+  const hi = new Date(lo); hi.setDate(hi.getDate()+100)
   const upcoming = D.milestones
     .filter(m => { const d=new Date(m.date); return d>=lo && d<=hi })
     .sort((a,b)=>new Date(a.date)-new Date(b.date))
@@ -990,7 +1025,7 @@ h += `</div>` // end featured
 if (D.heroes) {
   const hs = D.heroes
   h += `<div class="card">
-    <h2>📋 ヒーローズスクール — 無料解約の必須条件</h2>
+    <h2>📋 動画・SNS 伴走 — 全額返金の期限と出口設計</h2>
     <div class="hr-warn">⚠️ ${hs.warn}</div>
     ${hs.capacity?`<div class="hr-cap">${hs.capacity}</div>`:""}
     <div class="hr-grid">`
@@ -1002,6 +1037,24 @@ if (D.heroes) {
   </div>`)
   h += `</div>
     <div class="hr-verdict">💡 ${hs.verdict}</div>
+  </div>`
+}
+
+/* ── ベンチマーク候補 ── */
+if (D.bench) {
+  const bc = D.bench
+  h += `<div class="card">
+    <h2>🎯 ベンチマーク候補 — 型にする1本を選ぶ</h2>
+    <div class="hr-cap">${bc.note}</div>`
+  bc.groups.forEach(g => {
+    h += `<h3>${g.label}</h3><div class="links" style="flex-direction:column;gap:6px">`
+    g.items.forEach(it => h += `<div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap">
+      <a class="btn ac" href="${it.url}" target="_blank">${it.name}</a>
+      <span style="font-size:.75rem;color:var(--sub)">${it.memo}</span>
+    </div>`)
+    h += `</div>`
+  })
+  h += `<div class="hr-verdict">💡 ${bc.fit}</div>
   </div>`
 }
 
